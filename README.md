@@ -1,1 +1,1 @@
-my .config folder, in case my mac dies again.
+my .config folder, in case my mac dies again

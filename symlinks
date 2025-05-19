@@ -1,0 +1,4 @@
+# zshrc
+ln -s ~/.config/zshrc ~/.zshrc
+
+

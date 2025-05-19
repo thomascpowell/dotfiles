@@ -1,4 +1,4 @@
--- sources thomas/remap (equivilant to :so)
+-- sources remap (equivilant to :so)
 require("config.remap")
 
 -- sources thomas/lsp
@@ -17,6 +17,8 @@ vim.cmd[[set number]]
 
 -- removes yap session
 vim.cmd[[set shortmess=I]]
+-- vim.opt.shortmess:append("csCFSW")
+vim.opt.shortmess:append("atIcCfsSFW")
 
 -- hide default status bar
 vim.cmd[[set cmdheight=0]]
@@ -34,3 +36,11 @@ opt.autoindent = true -- copy indent from current line when starting new one
 -- make clipboard work as expected
 opt.clipboard:append("unnamedplus")
 
+-- show the diagnostics
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
