@@ -14,7 +14,7 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.lua_ls.setup{}
 
 -- tsserver
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.ts_ls.setup{}
 
 -- cssls
 require'lspconfig'.cssls.setup{}
