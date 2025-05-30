@@ -1,1 +1,1 @@
-my .config folder, in case my mac dies again
+dotfile for nvim, fastfetch, starship, zsh, etc.
