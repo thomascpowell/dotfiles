@@ -21,3 +21,11 @@ require'lspconfig'.cssls.setup{}
 
 -- go
 require'lspconfig'.gopls.setup{}
+
+-- svelte
+require('lspconfig').svelte.setup{
+  cmd = { "svelte-language-server", "--stdio" },
+  filetypes = { "svelte" },
+  root_dir = require('lspconfig.util').root_pattern("package.json", ".git"),
+}
+
