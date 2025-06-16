@@ -1,0 +1,34 @@
+start-at-login = false
+
+[gaps]
+    inner.horizontal = 20
+    inner.vertical =   20
+    outer.left =       20
+    outer.bottom =     20
+    outer.top =        20
+    outer.right =      20
+
+[mode.main.binding]
+  # open terminal
+  cmd-enter = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
+  # workspace management
+  alt-1 = 'workspace 1'
+  alt-2 = 'workspace 2'
+  alt-3 = 'workspace 3'
+  alt-4 = 'workspace 4'
+  alt-5 = 'workspace 5'
+  alt-shift-1 = 'move-node-to-workspace 1'
+  alt-shift-2 = 'move-node-to-workspace 2'
+  alt-shift-3 = 'move-node-to-workspace 3'
+  alt-shift-4 = 'move-node-to-workspace 4'
+  alt-shift-5 = 'move-node-to-workspace 5'
+  # move focus
+  alt-h = 'focus left'
+  alt-j = 'focus down'
+  alt-k = 'focus up'
+  alt-l = 'focus right'
+  # resize
+  alt-minus = 'resize smart -50'
+  alt-equal = 'resize smart +50'
+  # set floating mode
+  alt-shift-space = 'layout floating tiling'
