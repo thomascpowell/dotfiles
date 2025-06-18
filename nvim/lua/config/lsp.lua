@@ -10,6 +10,9 @@
 -- pyright
 require'lspconfig'.pyright.setup{}
 
+-- rust
+require'lspconfig'.rust.setup{}
+
 -- lua
 require'lspconfig'.lua_ls.setup{}
 
