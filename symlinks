@@ -1,4 +1,6 @@
 # zshrc
 ln -s ~/.config/zshrc ~/.zshrc
 
+# tmux
+ln -s ~/.config/tmux ~/.tmux.conf
 

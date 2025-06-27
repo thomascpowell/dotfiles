@@ -16,11 +16,13 @@ palette = 12=#7788aa
 palette = 13=#d7007d
 palette = 14=#708090
 palette = 15=#deeeed
+
 background = 191919
 foreground = deeeed
+
 cursor-color = deeeed
 selection-background = 7a7a7a
 selection-foreground = 0a0a0a
 
 window-padding-x = 15
-window-padding-y = 10
+window-padding-y = 10,5
