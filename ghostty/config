@@ -1,4 +1,7 @@
 font-size = 14
+title = " "
+macos-option-as-alt = true
+keybind = shift+enter=text:\n
 
 palette = 0=#080808
 palette = 1=#d70000
@@ -25,4 +28,4 @@ selection-background = 7a7a7a
 selection-foreground = 0a0a0a
 
 window-padding-x = 15
-window-padding-y = 10,5
+window-padding-y = 5
