@@ -1,1 +1,1 @@
-dotfiles for nvim, fastfetch, starship, zsh, etc.
+My dotfiles for vim, zsh, tmux, ghostty, aerospace, etc.
