@@ -28,4 +28,4 @@ selection-background = 7a7a7a
 selection-foreground = 0a0a0a
 
 window-padding-x = 15
-window-padding-y = 15
+window-padding-y = 5
