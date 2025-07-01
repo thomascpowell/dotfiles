@@ -18,7 +18,7 @@ bind r source-file ~/.tmux.conf
 # bar
 set -g status-right "#S on #h"
 set -g status-left ""
-# set -g status-position top
+set -g status-position top
 set -g window-status-format "*"
 set -g window-status-current-format "*"
 set -g window-status-current-style "fg=colour4"
