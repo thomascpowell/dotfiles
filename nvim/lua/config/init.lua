@@ -1,8 +1,14 @@
 -- sources remap (equivilant to :so)
 require("config.remap")
 
--- sources thomas/lsp
+-- sources lsp
 require("config.lsp")
+
+-- sources md writing config
+require("config.md")
+
+-- sources lazy
+require("config.lazy")
 
 -- styles
 vim.opt.termguicolors = true
