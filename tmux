@@ -28,8 +28,8 @@ set -g renumber-windows on
 set -g pane-border-lines simple
 set -g pane-border-style fg=colour8
 bind c new-window -c "#{pane_current_path}"
-bind - split-window -h -c "#{pane_current_path}"
-bind | split-window -v -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 
 # general
 set -g mouse on
