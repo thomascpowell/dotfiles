@@ -24,11 +24,14 @@ set -g window-status-current-format "*"
 set -g window-status-current-style "fg=colour4"
 set -g renumber-windows on
 
-# panes
+# panes and windows
 set -g pane-border-lines simple
 set -g pane-border-style fg=colour8
-bind | split-window -h
-bind - split-window -v
+bind c new-window -c "#{pane_current_path}"
+bind - split-window -h -c "#{pane_current_path}"
+bind | split-window -v -c "#{pane_current_path}"
 
 # general
 set -g mouse on
+
+# same path
