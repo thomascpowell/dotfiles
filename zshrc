@@ -7,6 +7,15 @@ export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git)
 
+# yazi alias to y and changes dir
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
