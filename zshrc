@@ -2,9 +2,9 @@
 source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 export ZSH="$HOME/.oh-my-zsh"
-
+source $ZSH/oh-my-zsh.sh
+export EDITOR='nvim'
 plugins=(git)
 
 # yazi alias to y and changes dir
@@ -16,9 +16,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-source $ZSH/oh-my-zsh.sh
+# tmux 
+alias td='tmux detach'
+alias ta='tmux attach -t'
+alias trs='tmux rename-session'
 
-export EDITOR='nvim'
 
 # starship
 eval "$(starship init zsh)"
