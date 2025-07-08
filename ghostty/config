@@ -1,5 +1,6 @@
 font-size = 14
 title = " "
+macos-titlebar-style = hidden
 macos-option-as-alt = true
 keybind = shift+enter=text:\n
 
@@ -28,4 +29,4 @@ selection-background = 7a7a7a
 selection-foreground = 0a0a0a
 
 window-padding-x = 15
-window-padding-y = 5
+window-padding-y = 20,10
