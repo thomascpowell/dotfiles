@@ -21,7 +21,6 @@ alias td='tmux detach'
 alias ta='tmux attach -t'
 alias trs='tmux rename-session'
 
-
 # starship
 eval "$(starship init zsh)"
 
