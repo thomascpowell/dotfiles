@@ -30,3 +30,10 @@ eval "$(zoxide init zsh)"
 # auto suggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^I' autosuggest-accept
+
+# bun completions
+[ -s "/Users/t/.bun/_bun" ] && source "/Users/t/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
