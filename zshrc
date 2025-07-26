@@ -21,6 +21,12 @@ alias td='tmux detach'
 alias ta='tmux attach -t'
 alias trs='tmux rename-session'
 
+# git
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+
+
 # starship
 eval "$(starship init zsh)"
 
