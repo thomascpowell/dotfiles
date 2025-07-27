@@ -8,3 +8,5 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 
 -- cycle through buffers
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
+
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)

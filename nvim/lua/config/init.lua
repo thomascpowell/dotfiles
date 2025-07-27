@@ -23,7 +23,6 @@ vim.cmd[[set number]]
 
 -- removes yap session
 vim.cmd[[set shortmess=I]]
--- vim.opt.shortmess:append("csCFSW")
 vim.opt.shortmess:append("atIcCfsSFW")
 
 -- hide default status bar
