@@ -32,3 +32,7 @@ require('lspconfig').svelte.setup{
   root_dir = require('lspconfig.util').root_pattern("package.json", ".git"),
 }
 
+-- go
+require'lspconfig'.jsonls.setup{}
+
+
