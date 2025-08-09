@@ -10,3 +10,7 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
 
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
+
+-- code action
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true })
+
