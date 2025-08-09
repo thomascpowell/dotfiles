@@ -16,6 +16,9 @@ require'lspconfig'.rust.setup{}
 -- lua
 require'lspconfig'.lua_ls.setup{}
 
+-- lua
+require'lspconfig'.clangd.setup{}
+
 -- tsserver
 require'lspconfig'.ts_ls.setup{}
 
