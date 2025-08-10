@@ -28,5 +28,5 @@ cursor-color = deeeed
 selection-background = 7a7a7a
 selection-foreground = 0a0a0a
 
-window-padding-x = 15
-window-padding-y = 15
+window-padding-x = 20
+window-padding-y = 20
