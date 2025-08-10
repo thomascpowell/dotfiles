@@ -9,8 +9,8 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 -- cycle through buffers
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
 
+-- lsp binds
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
-
--- code action
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true })
-
+vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
+vim.keymap.set("n", "<leader>k", function() vim.diagnostic.open_float() end, opts)
