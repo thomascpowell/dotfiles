@@ -23,7 +23,6 @@ return {
       },
       sections = {
         lualine_a = {'mode'},
-        -- lualine_b = {'buffers'},
         lualine_b = {},
         lualine_c = {},
         lualine_x = {'branch'},
