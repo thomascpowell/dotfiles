@@ -22,10 +22,10 @@ return {
         }
       },
       sections = {
-        lualine_a = {'mode'},
+        lualine_a = { 'mode' },
         lualine_b = {},
         lualine_c = {},
-        lualine_x = {'branch'},
+        lualine_x = { 'branch' },
         lualine_y = {},
         lualine_z = {}
       },
