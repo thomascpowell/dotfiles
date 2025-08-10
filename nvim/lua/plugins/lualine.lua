@@ -9,12 +9,12 @@ return {
         section_separators = '',
         component_separators = '',
         disabled_filetypes = {
-          statusline = { "NvimTree" },
-          winbar = { "NvimTree" },
+          statusline = {},
+          winbar = {},
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = true,
+        globalstatus = false,
         refresh = {
           statusline = 1000,
           tabline = 1000,
@@ -22,12 +22,13 @@ return {
         }
       },
       sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'filename' },
+        lualine_a = {'mode'},
+        -- lualine_b = {'buffers'},
+        lualine_b = {},
         lualine_c = {},
-        lualine_x = { "diff" },
+        lualine_x = {'branch'},
         lualine_y = {},
-        lualine_z = {},
+        lualine_z = {}
       },
       tabline = {},
       winbar = {},
