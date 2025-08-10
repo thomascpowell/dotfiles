@@ -9,5 +9,3 @@ return {
     require("mason-lspconfig").setup()
   end,
 }
-
-
