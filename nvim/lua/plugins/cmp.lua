@@ -24,7 +24,16 @@ return {
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,noselect",
+      },
+      window = {
+        completion = cmp.config.window.bordered({
+          border = "rounded",
+          max_height = 10,
+        }),
+        -- documentation = cmp.config.window.bordered({
+        --   border = "rounded",
+        -- }),
       },
       snippet = {
         expand = function(args)
