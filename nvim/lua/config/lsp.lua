@@ -26,5 +26,10 @@ require('lspconfig').svelte.setup {
   root_dir = require('lspconfig.util').root_pattern("package.json", ".git"),
 }
 
--- go
+-- json
 require 'lspconfig'.jsonls.setup {}
+
+-- docker
+require 'lspconfig'.dockerls.setup {}
+require 'lspconfig'.docker_compose_language_service.setup {}
+
