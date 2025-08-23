@@ -1,8 +1,8 @@
 -- pyright
 require 'lspconfig'.pyright.setup {}
-
+require 'lspconfig'.autopep8.setup {}
 -- rust
-require 'lspconfig'.rust.setup {}
+require 'lspconfig'.rust_analyzer.setup {}
 
 -- lua
 require 'lspconfig'.lua_ls.setup {}
@@ -32,4 +32,3 @@ require 'lspconfig'.jsonls.setup {}
 -- docker
 require 'lspconfig'.dockerls.setup {}
 require 'lspconfig'.docker_compose_language_service.setup {}
-
