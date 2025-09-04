@@ -31,9 +31,9 @@ return {
           border = "rounded",
           max_height = 10,
         }),
-        -- documentation = cmp.config.window.bordered({
-        --   border = "rounded",
-        -- }),
+        documentation = cmp.config.window.bordered({
+          border = "rounded",
+        }),
       },
       snippet = {
         expand = function(args)

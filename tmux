@@ -2,6 +2,9 @@
 unbind C-b
 set -g prefix C-a
 
+# no delay after prefix
+set -s escape-time 0
+
 # panes and windows start at 1
 set -g base-index 1
 set -g pane-base-index 1
