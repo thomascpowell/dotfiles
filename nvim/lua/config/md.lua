@@ -2,7 +2,7 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
-    local opt = vim.opt
+    local opt = vim.opt_local
     opt.wrap = true
     opt.linebreak = true
     opt.breakindent = true
