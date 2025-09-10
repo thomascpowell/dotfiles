@@ -22,11 +22,15 @@ return {
         }
       },
       sections = {
-        lualine_a = { 'mode' },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = { 'branch' },
-        lualine_y = {},
+        lualine_a = {},
+        lualine_b = { 'mode' },
+        lualine_c = { 'filename' },
+        lualine_x = { {
+          'diff',
+          colored = false,
+          symbols = { added = '+', modified = '~', removed = '-' } }
+        },
+        lualine_y = { 'branch' },
         lualine_z = {}
       },
       tabline = {},
