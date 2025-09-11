@@ -1,0 +1,27 @@
+/**
+* Firefox CSS
+*
+* about:config preference:
+* toolkit.legacyUserProfileCustomizations.stylesheets = true
+* */
+
+.titlebar-buttonbox-container {
+  display: none !important;
+  width: 0 !important;
+}
+
+.titlebar-spacer {
+  display: none !important;
+}
+
+#TabsToolbar {
+  padding-inline-start: 0.25em !important;
+}
+
+#tabs-newtab-button {
+  display: none !important;
+}
+
+.tab-close-button {
+  display: none !important;
+}

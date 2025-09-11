@@ -26,6 +26,8 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
+# smlnj
+export PATH="/usr/local/smlnj/bin:$PATH"
 
 # starship
 eval "$(starship init zsh)"
@@ -43,3 +45,4 @@ bindkey '^I' autosuggest-accept
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
