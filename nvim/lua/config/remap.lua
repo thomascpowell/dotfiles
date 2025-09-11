@@ -1,11 +1,15 @@
 vim.g.mapleader = " "
 
--- example remap: while in normal mode, leaderpv executes :Ex
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- toggle nvim-tree
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 
+
+-- up/down auto centers
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("x", "<C-u>", "<C-u>zz")
+vim.keymap.set("x", "<C-d>", "<C-d>zz")
 -- cycle through buffers
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
 
