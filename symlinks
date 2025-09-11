@@ -4,3 +4,6 @@ ln -s ~/.config/zshrc ~/.zshrc
 # tmux
 ln -s ~/.config/tmux ~/.tmux.conf
 
+# firefox
+ln -s ~/.config/firefox.css <firefox_profile>/chrome/userChrome.css
+
