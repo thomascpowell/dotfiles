@@ -1,6 +1,6 @@
 -- remaps that apply in md files, for writing purposes
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
+  pattern = { "markdown", "typst" },
   callback = function()
     local opt = vim.opt_local
     opt.wrap = true
