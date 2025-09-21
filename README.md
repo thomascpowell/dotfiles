@@ -1,1 +1,1 @@
-My dotfiles for vim, zsh, tmux, ghostty, aerospace, etc.
+dotfiles for nvim, zsh, tmux, ghostty, aerospace, firefox, etc.
