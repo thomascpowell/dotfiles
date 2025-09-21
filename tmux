@@ -33,6 +33,12 @@ bind c new-window -c "#{pane_current_path}"
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 
+# pane nav
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
 # general
 set -g mouse on
 
@@ -45,3 +51,4 @@ bind Escape copy-mode
 setw -g mode-keys vi
 bind -T copy-mode-vi v send -X begin-selection
 bind -T copy-mode-vi y send -X copy-selection-and-cancel
+
