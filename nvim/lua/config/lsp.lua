@@ -8,19 +8,16 @@ require 'lspconfig'.lua_ls.setup {}
 -- lua
 require 'lspconfig'.clangd.setup {}
 
+vim.lsp.enable("millet")
+
 -- tsserver
 require 'lspconfig'.ts_ls.setup {}
 
 -- cssls
 require 'lspconfig'.cssls.setup {}
 
-
 -- svelte
-require('lspconfig').svelte.setup {
-  cmd = { "svelte-language-server", "--stdio" },
-  filetypes = { "svelte" },
-  root_dir = require('lspconfig.util').root_pattern("package.json", ".git"),
-}
+vim.lsp.enable("svelte")
 
 -- json
 require 'lspconfig'.jsonls.setup {}
@@ -28,9 +25,3 @@ require 'lspconfig'.jsonls.setup {}
 -- docker
 require 'lspconfig'.dockerls.setup {}
 require 'lspconfig'.docker_compose_language_service.setup {}
-
--- rust
--- require 'lspconfig'.rust_analyzer.setup {}
--- go
--- require 'lspconfig'.gopls.setup {}
-
