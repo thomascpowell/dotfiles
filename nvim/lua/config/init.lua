@@ -12,8 +12,8 @@ require("config.lazy")
 
 -- styles
 vim.opt.termguicolors = true
-vim.cmd([[ hi NotifyBackground guibg = #000000 ]])
 vim.cmd [[hi VertSplit guifg=NONE]]
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", })
 
 -- removes tildes
 vim.opt.fillchars = { eob = " " }
@@ -33,10 +33,10 @@ vim.cmd [[set nowrap]]
 
 -- tabs & indentation
 local opt = vim.opt
-opt.tabstop = 2       -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2    -- 2 spaces for indent width
-opt.expandtab = true  -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 
 -- make clipboard work as expected
 opt.clipboard:append("unnamedplus")

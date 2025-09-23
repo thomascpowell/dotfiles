@@ -19,6 +19,8 @@ require 'lspconfig'.cssls.setup {}
 -- svelte
 vim.lsp.enable("svelte")
 
+vim.lsp.enable("sqlls")
+
 -- json
 require 'lspconfig'.jsonls.setup {}
 
