@@ -36,6 +36,7 @@ return {
         }),
       },
       snippet = {
+        border = "rounded",
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
