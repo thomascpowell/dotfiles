@@ -18,7 +18,7 @@ set-option -g mode-style "bg=colour8,fg=default"
 bind r source-file ~/.tmux.conf
 
 # bar
-set -g status-right "#S on #h"
+set -g status-right "#S"
 set -g status-left ""
 set -g status-position top
 set -g window-status-format "•"
@@ -27,7 +27,6 @@ set -g window-status-current-style "fg=colour7"
 set -g renumber-windows on
 
 # panes and windows
-set -g pane-border-lines simple
 set -g pane-border-style fg=colour8
 bind c new-window -c "#{pane_current_path}"
 bind | split-window -h -c "#{pane_current_path}"
