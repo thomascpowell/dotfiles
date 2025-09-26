@@ -17,7 +17,11 @@ end, { desc = "Format with Conform" })
 
 vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
 
-vim.keymap.set("n", "<leader>k", function() vim.diagnostic.open_float() end, opts)
+vim.keymap.set("n", "<leader>k", function()
+  vim.diagnostic.open_float(nil, {
+    border = "rounded",
+  })
+end, opts)
 
 vim.keymap.set('n', 'K', function()
   vim.lsp.buf.hover({
