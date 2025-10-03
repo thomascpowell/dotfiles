@@ -1,9 +1,7 @@
 vim.g.mapleader = " "
 
-
 -- toggle nvim-tree
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
-
 
 -- cycle through buffers
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
