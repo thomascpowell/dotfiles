@@ -1,6 +1,15 @@
+local function recording_macro()
+  local reg = vim.fn.reg_recording()
+  if reg == "" then
+    return ""
+  else
+    return "@" .. reg
+  end
+end
+
+
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     require('lualine').setup {
       options = {
@@ -19,19 +28,20 @@ return {
           statusline = 1000,
           tabline = 1000,
           winbar = 1000,
+          refresh_time = 32,
         }
       },
       sections = {
         lualine_a = {},
-        lualine_b = { 'mode' },
-        lualine_c = { 'filename' },
+        lualine_b = { 'mode', 'branch', recording_macro },
+        lualine_c = {},
         lualine_x = { {
           'diff',
           colored = false,
           symbols = { added = '+', modified = '~', removed = '-' } }
         },
-        lualine_y = { 'branch' },
-        lualine_z = {}
+        lualine_y = { 'filetype', 'diagnostics' },
+        lualine_z = {},
       },
       tabline = {},
       winbar = {},
