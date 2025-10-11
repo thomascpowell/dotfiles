@@ -40,7 +40,7 @@ return {
           colored = false,
           symbols = { added = '+', modified = '~', removed = '-' } }
         },
-        lualine_y = { 'filetype', 'diagnostics' },
+        lualine_y = { 'filename', 'diagnostics' },
         lualine_z = {},
       },
       tabline = {},
