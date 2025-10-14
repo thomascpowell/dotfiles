@@ -15,5 +15,8 @@ return {
       enabled = false,
       icon = false,
     },
+    code = {
+      sign = false
+    }
   },
 }
