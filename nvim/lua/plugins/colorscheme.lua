@@ -10,7 +10,5 @@ return {
       },
     })
     vim.cmd.colorscheme("lackluster")
-    -- vim.cmd.colorscheme("lackluster-hack")
-    -- vim.cmd.colorscheme("lackluster-mint")
   end,
 }
