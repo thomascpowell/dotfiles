@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- toggle nvim-tree
--- vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
-
 -- toggle oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
