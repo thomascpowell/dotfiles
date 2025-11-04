@@ -2,6 +2,7 @@ font-size = 12
 title = " "
 macos-titlebar-style = hidden
 macos-option-as-alt = true
+
 keybind = shift+enter=text:\n
 
 palette = 0=#080808
@@ -24,6 +25,7 @@ palette = 15=#deeeed
 background = 000000
 foreground = deeeed
 background-opacity = 0.7
+background-blur = 20
 
 cursor-color = deeeed
 selection-background = 7a7a7a
