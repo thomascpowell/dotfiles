@@ -1,1 +1,1 @@
-A collection of configs that I use. 
+Configurations for macOS and Linux. Mostly terminal stuff.
