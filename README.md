@@ -1,1 +1,1 @@
-dotfiles for nvim, zsh, tmux, ghostty, aerospace, firefox, etc.
+A collection of configs that I use. 
