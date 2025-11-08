@@ -1,0 +1,21 @@
+[mgr]
+tab_width = 1
+border_style = {fg = "white"}
+
+[mode]
+
+[status]
+sep_left = {open = "", close = ""}
+sep_right = {open = "", close = ""}
+progress_normal = {fg = "darkgrey", bg = "black"}
+progress_error  = {fg = "darkgrey", bg = "black"}
+perm_type = {fg = "white"}
+perm_read = {fg = "white"}
+perm_write = {fg = "white"}
+perm_exec = {fg = "white"}
+perm_sep = {fg = "white"}
+
+[select]
+border = {fg = "darkgrey"}
+active = {fg = "black"}
+inactive = {}
