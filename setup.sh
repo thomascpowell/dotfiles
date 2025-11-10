@@ -17,6 +17,7 @@ DIRS=(
   "ghostty"
   "nvim"
   "yazi"
+  "git"
 )
 
 symlink() {
