@@ -1,5 +1,3 @@
-start-at-login = true
-
 [gaps]
     inner.horizontal = 10
     inner.vertical =   10
