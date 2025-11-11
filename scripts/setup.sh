@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-# A simple script for linking my configurations.
+# A simple script for making symlinks
 
 # Locations
 DOTFILES="$HOME/dotfiles"

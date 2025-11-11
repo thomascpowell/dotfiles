@@ -1,21 +1,34 @@
 [mgr]
 tab_width = 1
-border_style = {fg = "white"}
+border_style = { fg = "black" }
+cwd = { fg = "white" }
+
+[style]
+fg = "white"
+bg = "black"
 
 [mode]
+normal_main = { bg = "black", bold = true }
+normal_alt  = { fg = "white", bg = "black" }
+
+[filetype]
+rules = [
+	{ name = "*/", fg = "white" }
+]
 
 [status]
-sep_left = {open = "", close = ""}
-sep_right = {open = "", close = ""}
-progress_normal = {fg = "darkgrey", bg = "black"}
-progress_error  = {fg = "darkgrey", bg = "black"}
-perm_type = {fg = "white"}
-perm_read = {fg = "white"}
-perm_write = {fg = "white"}
-perm_exec = {fg = "white"}
-perm_sep = {fg = "white"}
+overall = { fg = "white", bg = "black" }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+progress_normal = { fg = "white", bg = "black" }
+progress_error  = { fg = "white", bg = "black" }
+perm_type = { fg = "white" }
+perm_read = { fg = "white" }
+perm_write = { fg = "white" }
+perm_exec = { fg = "white" }
+perm_sep = { fg = "white" }
 
 [select]
-border = {fg = "darkgrey"}
-active = {fg = "black"}
-inactive = {}
+border = { fg = "black" }
+active = { fg = "white", bg = "black" }
+inactive = { fg = "white", bg = "black" }
