@@ -26,7 +26,7 @@ palette = 15=#deeeed
 
 background = 000000
 foreground = deeeed
-background-opacity = 0.8
+background-opacity = 0.7
 background-blur = 20
 
 cursor-color = deeeed
