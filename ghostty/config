@@ -1,3 +1,5 @@
+# colors from lackluster.nvim
+
 font-size = 12
 title = " "
 macos-titlebar-style = hidden

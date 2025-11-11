@@ -10,7 +10,6 @@ TARGET="$HOME/.config"
 # Directories to be linked
 DIRS=(
   "fastfetch"
-  "gh"
   "karabiner"
   "aerospace"
   "firefox"
@@ -18,6 +17,11 @@ DIRS=(
   "nvim"
   "yazi"
   "git"
+  "i3"
+  "i3status"
+  "kitty"
+  "picom"
+  "rofi"
 )
 
 symlink() {
@@ -47,14 +51,15 @@ done
 symlink "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
 symlink "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 symlink "$DOTFILES/starship/starship.toml" "$TARGET/starship.toml"
+symlink "$DOTFILES/x/.xinitrc" "$HOME/.xinitrc"
 
 # Firefox.
 get_firefox_profiles() {
   local base
   if [ -d "$HOME/Library/Application Support/Firefox/Profiles" ]; then
       base="$HOME/Library/Application Support/Firefox/Profiles"
-  elif [ -d "$HOME/.mozilla/firefox" ]; then
-      base="$HOME/.mozilla/firefox"
+  elif [ -d "$HOME/.librewolf" ]; then
+      base="$HOME/.librewolf"
   else
       return
   fi
