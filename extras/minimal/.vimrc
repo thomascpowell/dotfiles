@@ -13,7 +13,7 @@ syntax on
 
 let mapleader = " "
 
-nnoremap <leader>e :e .<CR>
+nnoremap - :e .<CR>
 vnoremap < <gv
 vnoremap > >gv
 
