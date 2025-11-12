@@ -36,6 +36,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# colima
+export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+
 # auto complete
 # source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
