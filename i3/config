@@ -16,6 +16,13 @@ bar {
   status_command i3status
   position bottom
   font pango: JetBrainsMono Nerd Font Mono 12
+  i3bar_command i3bar --transparency
+  colors {
+    statusline #DEEEED
+    background #08080860
+    separator #666666
+    focused_workspace #444444 #444444 #ffffff
+  }
 }
 
 # start programs
