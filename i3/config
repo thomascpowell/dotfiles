@@ -34,6 +34,10 @@ exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec rofi -show drun
 
+# music
+bindsym $mod+p exec playerctl play-pause
+bindsym $mod+s exec playerctl next
+
 # workspaces 
 set $ws1 "1"
 set $ws2 "2"
