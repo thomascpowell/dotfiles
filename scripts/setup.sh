@@ -22,6 +22,7 @@ DIRS=(
   "kitty"
   "picom"
   "rofi"
+  "zathura"
 )
 
 symlink() {
