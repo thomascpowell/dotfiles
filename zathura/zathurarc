@@ -1,0 +1,16 @@
+set pages-per-row 1
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 0.01
+
+map p print
+map i recolor
+map J zoom out
+map K zoom in
+
+set zoom-min 10
+set guioptions ""
+
+set selection-clipboard clipboard
+set render-loading "false"
+set scroll-step 50
