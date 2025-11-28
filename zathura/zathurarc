@@ -3,6 +3,8 @@ set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 0.01
 
+set window-title-page true
+
 map p print
 map i recolor
 map J zoom out
