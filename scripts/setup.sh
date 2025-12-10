@@ -7,7 +7,7 @@ set -euo pipefail
 DOTFILES="$HOME/dotfiles"
 TARGET="$HOME/.config"
 
-# Directories to be linked
+# Directories to be linked to .config
 DIRS=(
   "fastfetch"
   "karabiner"
@@ -23,6 +23,7 @@ DIRS=(
   "picom"
   "rofi"
   "zathura"
+  "mpv"
 )
 
 symlink() {
