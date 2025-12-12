@@ -3,5 +3,24 @@ show_hidden = true
 ratio = [2, 2, 4]
 
 [preview]
-max_width       = 1200
-max_height      = 1800
+max_width = 1200
+max_height = 1800
+
+[opener]
+edit = [
+	{ run = '$EDITOR "$@"', block = true },
+]
+mpv = [
+	{ run = 'mpv "$@"', orphan = true },
+]
+zathura = [
+	{ run = 'zathura "$@"', orphan = true },
+]
+
+[open]
+rules = [
+	{ mime = "text/*", use = "edit" },
+	{ mime = "video/*", use = "mpv" },
+	{ mime = "image/*", use = "mpv" },
+  { mime = "application/pdf", use = "zathura" }
+]
