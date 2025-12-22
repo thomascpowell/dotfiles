@@ -1,7 +1,8 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export EDITOR='nvim'
 
-# disable vi mode
+export EDITOR='nvim'
+export MANPAGER='nvim +Man!'
+
 bindkey -e
 
 function y() {
@@ -19,22 +20,11 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
-# smlnj for some reason
-export PATH="/usr/local/smlnj/bin:$PATH"
-
-# starship
 eval "$(starship init zsh)"
-
-# zoxide
 eval "$(zoxide init zsh)"
 
-# bun 
 [ -s "/Users/t/.bun/_bun" ] && source "/Users/t/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# cargo
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# colima
 export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
