@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 export EDITOR='nvim'
-export MANPAGER='nvim +Man!'
+export PAGER='nvim +Man!'
 
 bindkey -e
 
