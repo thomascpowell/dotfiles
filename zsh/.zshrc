@@ -1,9 +1,8 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 export EDITOR='nvim'
 export PAGER='nvim +Man!'
 
-bindkey -e
+bindkey -v
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
