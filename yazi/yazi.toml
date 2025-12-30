@@ -11,7 +11,7 @@ edit = [
 	{ run = '$EDITOR "$@"', block = true },
 ]
 mpv = [
-	{ run = 'mpv "$@"', orphan = true },
+	{ run = 'mpv --keep-open=yes "$@"', orphan = true },
 ]
 zathura = [
 	{ run = 'zathura "$@"', orphan = true },
