@@ -1,12 +1,12 @@
 set $mod Mod4
 
 # gaps
-gaps outer 10
-gaps inner 10
+gaps outer 5
+gaps inner 5
 
 # lock
 exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
-bindsym $mod+Escape exec i3lock -c 000000 
+bindsym $mod+Escape exec i3lock -c 000000 /dev/null --no-verif
 
 # no frames
 default_border none
@@ -19,11 +19,12 @@ bar {
   i3bar_command i3bar --transparency
   colors {
     statusline #DEEEED
-    background #08080860
-    separator #666666
+    background #0A0A0ACC
+    separator #0A0A0ACC
     focused_workspace #444444 #444444 #ffffff
   }
 }
+
 
 # start programs
 exec --no-startup-id nm-applet
@@ -31,6 +32,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/mountain.jpg
 exec --no-startup-id picom 
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+exec --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec rofi -show drun
 
