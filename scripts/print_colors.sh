@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# simple script that prints the 16 ansi colors in order
+
+term_name=$(basename "$TERM")
+output="$term_name: "
+
+for c in {0..15}; do
+    output+="\e[48;5;${c}m  \e[0m"
+done
+
+echo -e "$output"
