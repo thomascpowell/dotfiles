@@ -2,6 +2,7 @@
 vim.lsp.enable("millet")
 vim.lsp.enable("svelte")
 vim.lsp.enable("sqlls")
+vim.lsp.enable("bashls")
 
 -- updated
 vim.lsp.enable("pyright")
