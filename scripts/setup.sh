@@ -73,3 +73,8 @@ while IFS= read -r PROFILE; do
   mkdir -p "$PROFILE/chrome"
   symlink "$DOTFILES/firefox/firefox.css" "$PROFILE/chrome/userChrome.css"
 done < <(get_firefox_profiles)
+
+# Fonts
+if [[ "$(uname -s)" == "Linux" ]]; then
+  symlink "$DOTFILES/extra/font/emoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
+fi
