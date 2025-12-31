@@ -29,7 +29,7 @@ bar {
 # start programs
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/dresden.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/mountain.jpg
 exec --no-startup-id picom 
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bindsym $mod+Return exec kitty
@@ -41,6 +41,7 @@ bindsym $mod+s exec playerctl next
 
 # laptop
 exec --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
+exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
