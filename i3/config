@@ -13,8 +13,8 @@ default_border none
 
 # bar 
 bar {
-  status_command i3status
-  position top
+  status_command i3blocks
+  position bottom
   font pango: JetBrainsMono Nerd Font Mono 12
   i3bar_command i3bar --transparency
   colors {

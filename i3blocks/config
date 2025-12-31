@@ -1,0 +1,22 @@
+[global]
+interval=10
+separator=false
+markup=pango
+font=JetBrainsMono Nerd Font 12
+
+[bluetooth]
+command="/home/t/dotfiles/i3blocks/bluetooth.sh"
+interval=5
+
+[volume]
+# pipewire, pirewire pulse, pavucontrol
+command="/home/t/dotfiles/i3blocks/volume.sh"
+interval=2
+
+[battery]
+command="/home/t/.config/i3blocks/battery.sh"
+interval=30
+
+[time]
+command=date '+%m/%d %I:%M '
+interval=50
