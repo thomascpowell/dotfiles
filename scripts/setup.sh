@@ -18,7 +18,6 @@ DIRS=(
   "yazi"
   "git"
   "i3"
-  "i3status"
   "i3blocks"
   "kitty"
   "picom"
