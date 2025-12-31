@@ -23,6 +23,7 @@ DIRS=(
   "picom"
   "rofi"
   "zathura"
+  "fontconfig"
   "mpv"
 )
 
@@ -76,5 +77,6 @@ done < <(get_firefox_profiles)
 
 # Fonts
 if [[ "$(uname -s)" == "Linux" ]]; then
-  symlink "$DOTFILES/extra/font/emoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
+  symlink "$DOTFILES/extras/fonts/AppleColorEmoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
+  symlink "$DOTFILES/extras/fonts/sf" "$HOME/.local/share/fonts/sf"
 fi
