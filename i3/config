@@ -6,7 +6,7 @@ gaps inner 5
 
 # lock
 exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
-bindsym $mod+Escape exec i3lock -c 000000 /dev/null --no-verif
+bindsym $mod+Escape exec i3lock -c 000000 /dev/null --no-verify
 
 # no frames
 default_border none
@@ -24,7 +24,6 @@ bar {
     focused_workspace #444444 #444444 #ffffff
   }
 }
-
 
 # start programs
 exec --no-startup-id nm-applet

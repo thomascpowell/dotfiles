@@ -23,7 +23,7 @@
 }
 
 * {
-  font: "JetBrainsMono Nerd Font 12";
+  font: "sans-serif 16";
   background-color: transparent;
   text-color: @gray9;
   margin: 0px;
