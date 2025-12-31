@@ -1,12 +1,12 @@
 set $mod Mod4
 
 # gaps
-gaps outer 5
-gaps inner 5
+gaps outer 0
+gaps inner 12
 
 # lock
-exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
-bindsym $mod+Escape exec i3lock -c 000000 /dev/null --no-verify
+exec --no-startup-id xautolock -time 1 -locker "i3lock -c 000000 --no-unlock-indicator"
+bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator
 
 # no frames
 default_border none
@@ -14,30 +14,44 @@ default_border none
 # bar 
 bar {
   status_command i3status
-  position bottom
+  position top
   font pango: JetBrainsMono Nerd Font Mono 12
   i3bar_command i3bar --transparency
   colors {
-    statusline #DEEEED
+    statusline #444444
     background #0A0A0ACC
     separator #0A0A0ACC
-    focused_workspace #444444 #444444 #ffffff
+    focused_workspace #0A0A0ACC #0A0A0ACC #DEEEED
+    inactive_workspace #0A0A0ACC #0A0A0ACC #444444
   }
 }
 
 # start programs
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/mountain.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/dresden.jpg
 exec --no-startup-id picom 
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
-exec --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec rofi -show drun
 
 # music
 bindsym $mod+p exec playerctl play-pause
 bindsym $mod+s exec playerctl next
+
+# laptop
+exec --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF89AudioMute exec amixer set Master toggle
+
+# kill program
+bindsym $mod+q kill
+
+# restart
+bindsym $mod+Shift+r restart
 
 # workspaces 
 set $ws1 "1"
@@ -57,12 +71,6 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-
-# kill program
-bindsym $mod+q kill
-
-# restart
-bindsym $mod+Shift+r restart
 
 # focus
 bindsym $mod+h focus left
