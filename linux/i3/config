@@ -5,7 +5,7 @@ gaps outer 0
 gaps inner 12
 
 # lock
-exec --no-startup-id xautolock -time 1 -locker "i3lock -c 000000 --no-unlock-indicator"
+exec --no-startup-id xautolock -time 3 -locker "i3lock -c 000000 --no-unlock-indicator"
 bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator
 
 # no frames
