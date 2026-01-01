@@ -10,7 +10,7 @@ interval=5
 
 [volume]
 # pipewire, pirewire pulse, pavucontrol
-command="/home/t/dotfiles/i3blocks/volume.sh"
+command="/home/t/.config/i3blocks/volume.sh"
 interval=2
 
 [battery]

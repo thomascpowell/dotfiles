@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# A simple script for making symlinks
+
+set -euo pipefail
+
+DOTFILES="$HOME/dotfiles"
+TARGET="$HOME/.config"
+
+#
+# Directories to be linked to .config
+#
+
+MAC_DIRS=(
+  "aerospace"
+  "ghostty"
+  "karabiner"
+)
+
+LINUX_DIRS=(
+  "i3"
+  "i3blocks"
+  "kitty"
+  "picom"
+  "rofi"
+  "fontconfig"
+)
+
+SHARED_DIRS=(
+  "fastfetch"
+  "nvim"
+  "yazi"
+  "git"
+  "zathura"
+  "mpv"
+)
+
+#
+# Symlink function
+#
+
+symlink() {
+  local src="$1"
+  local dest="$2"
+  mkdir -p "$(dirname "$dest")"
+  echo ""
+  # remove existing file or symlink
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+      rm -rf "$dest"
+      echo "removed existing: $dest"
+  fi
+  ln -s "$src" "$dest"
+  echo "linked: $src -> $dest"
+  echo ""
+}
+
+#
+# Linux 
+#
+
+if [[ "$(uname -s)" == "Linux" ]]; then
+  symlink "$DOTFILES/extras/fonts/AppleColorEmoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
+  symlink "$DOTFILES/extras/fonts/sf" "$HOME/.local/share/fonts/sf"
+  for dir in "${LINUX_DIRS[@]}"; do
+    symlink "$DOTFILES/linux/$dir" "$TARGET/$dir"
+  done
+fi
+
+#
+# macOS 
+#
+
+if [[ "$(uname -s)" != "Linux" ]]; then
+  for dir in "${MAC_DIRS[@]}"; do
+    symlink "$DOTFILES/mac/$dir" "$TARGET/$dir"
+  done
+fi
+
+#
+# Shared
+#
+
+for dir in "${SHARED_DIRS[@]}"; do
+  symlink "$DOTFILES/shared/$dir" "$TARGET/$dir"
+done
+
+for script in "$DOTFILES/local"/*; do
+  symlink "$script" "$HOME/.local/bin/$(basename "$script")"
+done
+
+symlink "$DOTFILES/shared/tmux/.tmux.conf" "$HOME/.tmux.conf"
+symlink "$DOTFILES/shared/zsh/.zshrc" "$HOME/.zshrc"
+symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
+symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
+
+get_firefox_profiles() {
+  local base
+  if [ -d "$HOME/Library/Application Support/Firefox/Profiles" ]; then
+      base="$HOME/Library/Application Support/Firefox/Profiles"
+  elif [ -d "$HOME/.librewolf" ]; then
+      base="$HOME/.librewolf"
+  else
+      return
+  fi
+  printf '%s\n' "$base"/*.default*
+}
+
+while IFS= read -r PROFILE; do
+  [ -d "$PROFILE" ] || continue
+  echo "updating firefox profile: $PROFILE"
+  mkdir -p "$PROFILE/chrome"
+  symlink "$DOTFILES/shared/firefox/firefox.css" "$PROFILE/chrome/userChrome.css"
+done < <(get_firefox_profiles)

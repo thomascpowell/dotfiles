@@ -1,36 +1,29 @@
 [gaps]
-    inner.horizontal = 10
-    inner.vertical = 10
-    outer.left = 10
-    outer.bottom = 10
-    outer.top = 10
-    outer.right = 10
+  inner.horizontal = 10
+  inner.vertical = 10
+  outer.left = 10
+  outer.bottom = 10
+  outer.top = 10
+  outer.right = 10
 
 [mode.main.binding]
-  # open terminal
   cmd-enter = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
-  # change workspace
   alt-1 = 'workspace 1'
   alt-2 = 'workspace 2'
   alt-3 = 'workspace 3'
   alt-4 = 'workspace 4'
   alt-5 = 'workspace 5'
-  # move node to workspace
   alt-shift-1 = 'move-node-to-workspace 1'
   alt-shift-2 = 'move-node-to-workspace 2'
   alt-shift-3 = 'move-node-to-workspace 3'
   alt-shift-4 = 'move-node-to-workspace 4'
   alt-shift-5 = 'move-node-to-workspace 5'
-  # move workspace to monitor
   alt-shift-up = 'move-workspace-to-monitor up'
   alt-shift-down = 'move-workspace-to-monitor down'
-  # move focus
   alt-h = 'focus left'
   alt-j = 'focus down'
   alt-k = 'focus up'
   alt-l = 'focus right'
-  # resize
   alt-minus = 'resize smart -50'
   alt-equal = 'resize smart +50'
-  # set floating mode
   alt-shift-space = 'layout floating tiling'
