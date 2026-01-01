@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# external display setup script
+
+DATA=xrandr
+
+# get the primary monitor name by looking for "[name] connected primary"
+# then pick from connected monitors other than PRIMARY_MONITOR
+PRIMARY=$("$DATA" | awk '$3=="primary" && $2=="connected" {print $1}')
+OUTPUT=$("$DATA" | awk -v primary="$PRIMARY" '$2=="connected" && $1!=primary {print $1}' | fzf)
+
+DIRECTION=$(printf "above\nbelow\nleft-of\nright-of" | fzf)
+
+if [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
+  echo "error"
+  exit 1
+fi
+
+xrandr --output "$OUTPUT" --auto --"$DIRECTION" "$PRIMARY"
+echo "connected $OUTPUT $DIRECTION $PRIMARY"
