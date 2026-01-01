@@ -5,7 +5,7 @@ markup=pango
 font=JetBrainsMono Nerd Font 12
 
 [bluetooth]
-command="/home/t/dotfiles/i3blocks/bluetooth.sh"
+command="/home/t/.config/i3blocks/bluetooth.sh"
 interval=5
 
 [volume]
