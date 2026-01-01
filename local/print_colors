@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # simple script that prints the 16 ansi colors in order
 
