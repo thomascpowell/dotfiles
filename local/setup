@@ -46,8 +46,8 @@ symlink() {
   echo ""
   # remove existing file or symlink
   if [ -e "$dest" ] || [ -L "$dest" ]; then
-      rm -rf "$dest"
-      echo "removed existing: $dest"
+    rm -rf "$dest"
+    echo "removed existing: $dest"
   fi
   ln -s "$src" "$dest"
   echo "linked: $src -> $dest"

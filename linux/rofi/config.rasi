@@ -1,6 +1,6 @@
 configuration {
-    modi: "drun,run,window";
-    show-icons: false;
-    dpi: 144;
+  modi: "drun,run,window";
+  show-icons: false;
+  dpi: 144;
 }
 @theme "theme"

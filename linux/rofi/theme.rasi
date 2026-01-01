@@ -2,8 +2,8 @@
 
 * {
   y-offset: 0;
-  width: 1000;
-  items: 5;
+  width: 1200;
+  items: 3;
   lack: #708090;
   luster: #deeeed;
   orange: #ffaa88;
@@ -23,7 +23,7 @@
 }
 
 * {
-  font: "sans-serif 16";
+  font: "system-ui 16";
   background-color: transparent;
   text-color: @gray9;
   margin: 0px;
