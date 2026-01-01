@@ -22,6 +22,7 @@ bar {
     background #0A0A0ACC
     separator #0A0A0ACC
     focused_workspace #0A0A0ACC #0A0A0ACC #DEEEED
+    active_workspace #0A0A0ACC #0A0A0ACC #444444
     inactive_workspace #0A0A0ACC #0A0A0ACC #444444
   }
 }
@@ -70,6 +71,9 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
+
+# move workspace to output
+bindsym $mod+m move workspace to output next
 
 # focus
 bindsym $mod+h focus left
