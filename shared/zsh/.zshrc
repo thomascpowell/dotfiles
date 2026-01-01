@@ -26,4 +26,10 @@ eval "$(zoxide init zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+
+COLIMA_SOCK="$HOME/.colima/default/docker.sock"
+if [[ "$(uname -s)" != "Linux" ]] && [[ -S "$COLIMA_SOCK" ]]; then
+  export DOCKER_HOST="unix://${COLIMA_SOCK}"
+else
+  export DOCKER_HOST="unix:///var/run/docker.sock"
+fi
