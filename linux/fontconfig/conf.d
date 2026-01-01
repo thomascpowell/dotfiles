@@ -18,4 +18,10 @@
     </prefer>
   </alias>
 
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>JetBrainsMono Nerd Font Mono</family>
+    </prefer>
+  </alias>
 </fontconfig>

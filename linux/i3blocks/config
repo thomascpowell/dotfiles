@@ -15,7 +15,7 @@ interval=2
 
 [battery]
 command="/home/t/.config/i3blocks/battery.sh"
-interval=30
+interval=20
 
 [time]
 command=date '+%m/%d %I:%M '
