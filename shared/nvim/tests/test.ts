@@ -1,3 +1,3 @@
 function test(): string {
-  return ""
+  return "hello"
 }
