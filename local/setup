@@ -61,6 +61,7 @@ symlink() {
 if [[ "$(uname -s)" == "Linux" ]]; then
   symlink "$DOTFILES/extras/fonts/AppleColorEmoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
   symlink "$DOTFILES/extras/fonts/sf" "$HOME/.local/share/fonts/sf"
+  symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
   for dir in "${LINUX_DIRS[@]}"; do
     symlink "$DOTFILES/linux/$dir" "$TARGET/$dir"
   done
@@ -91,7 +92,6 @@ done
 symlink "$DOTFILES/shared/tmux/.tmux.conf" "$HOME/.tmux.conf"
 symlink "$DOTFILES/shared/zsh/.zshrc" "$HOME/.zshrc"
 symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
-symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
 
 get_firefox_profiles() {
   local base
