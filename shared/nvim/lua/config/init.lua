@@ -18,8 +18,8 @@ vim.opt.cmdheight = 0
 vim.opt.wrap = false
 
 -- spaces
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
@@ -29,9 +29,9 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })

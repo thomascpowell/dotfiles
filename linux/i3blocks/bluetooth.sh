@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if bluetoothctl info | grep -q "Connected: yes"; then
-  echo "BTH ON"
+INFO=$(bluetoothctl info)
+
+if echo "$INFO" | grep -q "Connected: yes"; then
+  echo "$INFO"| awk '$1 == "Alias:" {print "BTH", $2}'
   exit
 fi
 

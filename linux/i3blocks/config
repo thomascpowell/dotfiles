@@ -11,7 +11,7 @@ interval=5
 [volume]
 # pipewire, pirewire pulse, pavucontrol
 command="/home/t/.config/i3blocks/volume.sh"
-interval=2
+interval=5
 
 [battery]
 command="/home/t/.config/i3blocks/battery.sh"
