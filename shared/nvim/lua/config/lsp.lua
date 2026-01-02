@@ -1,3 +1,5 @@
+-- enable lsps
+
 vim.lsp.enable("svelte")
 vim.lsp.enable("bashls")
 vim.lsp.enable("pyright")
@@ -5,10 +7,3 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("cssls")
 vim.lsp.enable("rust_analyzer")
-
--- vim.lsp.enable("dockerls")
--- vim.lsp.enable("clangd")
--- vim.lsp.enable("jsonls")
--- vim.lsp.enable("sqlls")
--- vim.lsp.enable("docker_compose_language_service")
--- vim.lsp.enable("phpactor")

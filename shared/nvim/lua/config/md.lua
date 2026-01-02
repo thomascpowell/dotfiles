@@ -1,4 +1,5 @@
 -- remaps that apply in md files, for writing purposes
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown", "typst" },
   callback = function()

@@ -1,51 +1,37 @@
--- sources remap (equivilant to :so)
+-- basic setup
+
 require("config.remap")
-
--- sources lsp
 require("config.lsp")
-
--- sources md writing config
 require("config.md")
-
--- sources lazy
 require("config.lazy")
 
 -- styles
 vim.opt.termguicolors = true
-vim.cmd [[hi VertSplit guifg=NONE]]
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", })
 
--- removes tildes
+-- ui
 vim.opt.fillchars = { eob = " " }
+vim.opt.number = true
+vim.opt.termguicolors = true
+vim.opt.shortmess = "IatIcCfsSFW"
+vim.opt.cmdheight = 0
+vim.opt.wrap = false
 
--- adds line numbers
-vim.cmd [[set number]]
+-- spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
 
--- removes yap session
-vim.cmd [[set shortmess=I]]
-vim.opt.shortmess:append("atIcCfsSFW")
-
--- hide default status bar
-vim.cmd [[set cmdheight=0]]
-
--- nowrap
-vim.cmd [[set nowrap]]
-
--- tabs & indentation
-local opt = vim.opt
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
-
--- make clipboard work as expected
-opt.clipboard:append("unnamedplus")
-
--- show the diagnostics
+-- behavior
+vim.opt.clipboard:append("unnamedplus")
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
 })
