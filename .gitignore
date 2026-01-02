@@ -1,4 +1,4 @@
-.DS_Store
+# untracked configurations
 htop/
 litecli/
 uv/
@@ -7,3 +7,7 @@ fish/
 karabiner/
 swi-prolog/
 nvim/spell
+
+# other
+.DS_Store
+.luarc.json
