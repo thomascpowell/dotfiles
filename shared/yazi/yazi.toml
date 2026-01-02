@@ -1,6 +1,6 @@
 [mgr]
 show_hidden = true
-ratio = [2, 2, 4]
+ratio = [2, 2, 5]
 
 [preview]
 max_width = 1200
@@ -8,7 +8,7 @@ max_height = 1800
 
 [opener]
 edit = [
-	{ run = '$EDITOR "$@"', block = true },
+  { run = '$EDITOR "$@"', block = true },
 ]
 mpv = [
 	{ run = 'mpv --keep-open=yes "$@"', orphan = true },
@@ -18,9 +18,9 @@ zathura = [
 ]
 
 [open]
-rules = [
-	{ mime = "text/*", use = "edit" },
-	{ mime = "video/*", use = "mpv" },
-	{ mime = "image/*", use = "mpv" },
+rules = [ 
+  { mime = "text/*", use = "edit" },
+  { mime = "video/*", use = "mpv" },
+  { mime = "image/*", use = "mpv" },
   { mime = "application/pdf", use = "zathura" }
 ]
