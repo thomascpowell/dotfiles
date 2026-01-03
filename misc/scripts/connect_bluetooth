@@ -1,0 +1,7 @@
+#!/bin/sh
+
+DEVICE=$1
+
+MAC=$(bluetoothctl devices | awk -v dev="$DEVICE" '$3 == dev {print $2}')
+
+bluetoothctl connect "$MAC" | grep -q "successful" && echo "OK" || echo "ERROR"
