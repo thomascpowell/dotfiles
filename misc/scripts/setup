@@ -55,8 +55,9 @@ symlink() {
 ### symlinking linux-specific configurations ### 
 
 if [[ "$IS_LINUX" -eq 1 ]]; then
-  symlink "$DOTFILES/misc/fonts/emoji/AppleColorEmoji.ttf" "$HOME/.local/share/fonts/AppleColorEmoji.ttf"
+  symlink "$DOTFILES/misc/fonts/emoji" "$HOME/.local/share/fonts/emoji"
   symlink "$DOTFILES/misc/fonts/sf" "$HOME/.local/share/fonts/sf"
+  symlink "$DOTFILES/misc/fonts/inter" "$HOME/.local/share/fonts/inter"
   symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
   for dir in "${LINUX_DIRS[@]}"; do
     symlink "$DOTFILES/linux/$dir" "$TARGET/$dir"
