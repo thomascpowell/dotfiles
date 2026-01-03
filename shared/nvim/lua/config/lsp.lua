@@ -1,6 +1,6 @@
 -- enable lsps
-
 vim.lsp.enable("svelte")
+vim.lsp.enable("emmetls")
 vim.lsp.enable("bashls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("lua_ls")
