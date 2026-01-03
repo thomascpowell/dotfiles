@@ -26,6 +26,7 @@ LINUX_DIRS=(
 SHARED_DIRS=(
   "fastfetch"
   "nvim"
+  "tmux"
   "yazi"
   "git"
   "zathura"
@@ -77,7 +78,6 @@ fi
 for dir in "${SHARED_DIRS[@]}"; do
   symlink "$DOTFILES/shared/$dir" "$TARGET/$dir"
 done
-symlink "$DOTFILES/shared/tmux/.tmux.conf" "$HOME/.tmux.conf"
 symlink "$DOTFILES/shared/zsh/.zshrc" "$HOME/.zshrc"
 symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
 
