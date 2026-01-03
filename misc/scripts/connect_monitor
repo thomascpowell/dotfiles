@@ -12,9 +12,9 @@ OUTPUT=$("$DATA" | awk -v primary="$PRIMARY" '$2=="connected" && $1!=primary {pr
 DIRECTION=$(printf "above\nbelow\nleft-of\nright-of" | fzf)
 
 if [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
-  echo "error"
+  echo "ERROR"
   exit 1
 fi
 
 xrandr --output "$OUTPUT" --auto --"$DIRECTION" "$PRIMARY"
-echo "connected $OUTPUT $DIRECTION $PRIMARY"
+echo "OK ($OUTPUT $DIRECTION $PRIMARY)"
