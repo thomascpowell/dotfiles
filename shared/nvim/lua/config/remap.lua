@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 
 -- toggle oil
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- idk if i need oil anymore
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- cycle through buffers
 vim.keymap.set("n", "<leader><tab>", ":b<space><Tab>")
@@ -30,3 +31,7 @@ vim.keymap.set('n', 'K', function()
         border = "rounded"
     })
 end, { noremap = true, silent = true })
+
+
+vim.keymap.set('n', '+', '<C-a>', { silent = true })
+vim.keymap.set('n', '-', '<C-x>', { silent = true })
