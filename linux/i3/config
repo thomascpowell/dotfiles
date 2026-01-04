@@ -28,19 +28,24 @@ bar {
 }
 
 # start programs
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/extras/wall/mountain.jpg
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/misc/wall/mountain.jpg
 exec_always --no-startup-id picom 
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+
+# configuration
+exec_always --no-startup-id xset r rate 400 30
+exec_always --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
+exec_always --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+
+# general binds
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec rofi -show drun
-
-# music
 bindsym $mod+p exec playerctl play-pause
 bindsym $mod+s exec playerctl next
+bindsym $mod+q kill
+bindsym $mod+Shift+r restart
 
-# laptop
-exec --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
-exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+# laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
@@ -48,13 +53,7 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
-# kill program
-bindsym $mod+q kill
-
-# restart
-bindsym $mod+Shift+r restart
-
-# workspaces 
+# workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
