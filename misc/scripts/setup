@@ -78,7 +78,7 @@ fi
 for dir in "${SHARED_DIRS[@]}"; do
   symlink "$DOTFILES/shared/$dir" "$TARGET/$dir"
 done
-symlink "$DOTFILES/shared/zsh/.zshrc" "$HOME/.zshrc"
+symlink "$DOTFILES/shared/zsh/zshrc" "$HOME/.zshrc"
 symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
 
 ### symlinking scripts to .local/bin ###
@@ -107,7 +107,7 @@ while IFS= read -r PROFILE; do
   [ -d "$PROFILE" ] || continue
   echo "updating firefox profile: $PROFILE"
   mkdir -p "$PROFILE/chrome"
-  symlink "$DOTFILES/shared/firefox/firefox.css" "$PROFILE/chrome/userChrome.css"
+  symlink "$DOTFILES/shared/firefox/userChrome.css" "$PROFILE/chrome/userChrome.css"
 done < <(get_firefox_profiles)
 
 ### success ###
