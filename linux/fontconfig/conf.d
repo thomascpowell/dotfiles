@@ -7,6 +7,7 @@
     <prefer>
       <family>SF Pro Text</family>
       <family>SF Pro Display</family>
+      <family>Apple Color Emoji</family>
     </prefer>
   </alias>
 
@@ -15,6 +16,7 @@
     <prefer>
       <family>SF Pro Text</family>
       <family>SF Pro Display</family>
+      <family>Apple Color Emoji</family>
     </prefer>
   </alias>
 
@@ -22,6 +24,7 @@
     <family>monospace</family>
     <prefer>
       <family>JetBrainsMono Nerd Font Mono</family>
+      <family>Apple Color Emoji</family>
     </prefer>
   </alias>
 </fontconfig>
