@@ -30,7 +30,7 @@ bar {
 # start programs
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/misc/wall/mountain.jpg
 exec_always --no-startup-id picom 
-exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 # configuration
 exec_always --no-startup-id xset r rate 400 30
