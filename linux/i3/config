@@ -5,7 +5,7 @@ gaps outer 0
 gaps inner 12
 
 # lock
-exec --no-startup-id xautolock -time 3 -locker "i3lock -c 000000 --no-unlock-indicator"
+exec --no-startup-id xautolock -time 5 -locker "i3lock -c 000000 --no-unlock-indicator"
 bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator
 
 # no frames
@@ -14,16 +14,16 @@ default_border none
 # bar 
 bar {
   status_command i3blocks
-  position bottom
+  position top
   font pango: JetBrainsMono Nerd Font Mono 12
   i3bar_command i3bar --transparency
   colors {
     statusline #444444
-    background #0A0A0ACC
-    separator #0A0A0ACC
-    focused_workspace #0A0A0ACC #0A0A0ACC #DEEEED
-    active_workspace #0A0A0ACC #0A0A0ACC #444444
-    inactive_workspace #0A0A0ACC #0A0A0ACC #444444
+    background #0A0A0A
+    separator #0A0A0A
+    focused_workspace #0A0A0A #0A0A0A #DEEEED
+    active_workspace #0A0A0A #0A0A0A #444444
+    inactive_workspace #0A0A0A #0A0A0A #444444
   }
 }
 
