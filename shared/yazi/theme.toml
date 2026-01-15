@@ -15,3 +15,6 @@ normal_alt  = { fg = "white", bg = "black" }
 rules = [
 	{ name = "*/", fg = "white" }
 ]
+
+[indicator]
+padding = { open = "█", close = "█" }
