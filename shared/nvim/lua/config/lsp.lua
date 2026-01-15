@@ -1,6 +1,7 @@
 -- web
 vim.lsp.enable("svelte")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("html")
 vim.lsp.enable("emmetls")
 vim.lsp.enable("cssls")
 vim.lsp.enable("phpactor")
