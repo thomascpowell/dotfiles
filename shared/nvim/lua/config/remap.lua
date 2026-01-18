@@ -8,7 +8,7 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
 -- format
 vim.keymap.set("n", "<leader>lf", function()
-    require("conform").format({ async = true, lsp_fallback = true })
+  require("conform").format({ async = true, lsp_fallback = true })
 end, { desc = "Format with Conform" })
 
 -- code action
@@ -16,16 +16,16 @@ vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, vim.
 
 -- diagnostic
 vim.keymap.set("n", "<leader>k", function()
-    vim.diagnostic.open_float(nil, {
-        border = "rounded",
-    })
+  vim.diagnostic.open_float(nil, {
+    border = "rounded",
+  })
 end, vim.opts)
 
 -- info
 vim.keymap.set('n', 'K', function()
-    vim.lsp.buf.hover({
-        border = "rounded"
-    })
+  vim.lsp.buf.hover({
+    border = "rounded"
+  })
 end, { noremap = true, silent = true })
 
 
