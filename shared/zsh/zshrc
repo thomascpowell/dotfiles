@@ -9,9 +9,12 @@ alias y='yazi'
 alias td='tmux detach'
 alias ta='tmux attach -t'
 alias trs='tmux rename-session'
+
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+
+alias open='xdg-open'
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
