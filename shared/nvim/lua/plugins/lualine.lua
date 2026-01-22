@@ -7,7 +7,6 @@ local function recording_macro()
   end
 end
 
-
 return {
   'nvim-lualine/lualine.nvim',
   config = function()
