@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Opens the remote URL for the current directory
+
+xdg-open "$(git remote get-url origin)"
