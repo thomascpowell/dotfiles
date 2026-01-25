@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-
 ### definitions ###
 
 DOTFILES="$HOME/dotfiles"
@@ -83,7 +82,7 @@ symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
 
 ### symlinking scripts to .local/bin ###
 
-for script in "$DOTFILES/misc/scripts"/*; do
+for script in "$DOTFILES/scripts"/*; do
   symlink "$script" "$HOME/.local/bin/$(basename "$script")"
 done
 
