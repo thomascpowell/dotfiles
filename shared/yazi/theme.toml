@@ -3,18 +3,31 @@ tab_width = 1
 border_style = { fg = "white" }
 cwd = { fg = "white" }
 
-[style]
-fg = "white"
-bg = "black"
+# [style]
+# fg = "white"
+# bg = "black"
 
 [mode]
 normal_main = { bg = "black" }
 normal_alt  = { fg = "white", bg = "black" }
 
-[filetype]
-rules = [
-	{ name = "*/", fg = "white" }
-]
-
 [indicator]
 padding = { open = "█", close = "█" }
+
+[filetype]
+rules = [
+	{ name = "*/*", fg = "white" }
+]
+
+[icon]
+dirs = [
+	{ name = ".config", text = "", fg = "brightgreen" },
+	{ name = ".git", text = "", fg = "brightgreen" },
+	{ name = ".github", text = "", fg = "brightgreen" },
+	{ name = ".npm", text = "", fg = "brightgreen" },
+]
+conds = [
+  { if = "dir", text = "", fg = "white" },
+  { if = "exec", text = "", fg = "white" },
+  { if = "!dir", text = "", fg = "white" },
+]
