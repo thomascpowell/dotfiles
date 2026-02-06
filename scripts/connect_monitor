@@ -16,5 +16,5 @@ if [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
   exit 1
 fi
 
-xrandr --output "$OUTPUT" --auto --"$DIRECTION" "$PRIMARY"
+xrandr --output "$OUTPUT" --"$DIRECTION" "$PRIMARY" --auto
 echo "OK ($OUTPUT $DIRECTION $PRIMARY)"

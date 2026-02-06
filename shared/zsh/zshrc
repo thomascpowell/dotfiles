@@ -30,3 +30,5 @@ if [[ "$(uname -s)" != "Linux" ]] && [[ -S "$COLIMA_SOCK" ]]; then
 else
   export DOCKER_HOST="unix:///var/run/docker.sock"
 fi
+
+eval fastfetch
