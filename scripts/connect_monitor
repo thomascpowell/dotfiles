@@ -11,10 +11,14 @@ OUTPUT=$("$DATA" | awk -v primary="$PRIMARY" '$2=="connected" && $1!=primary {pr
 
 DIRECTION=$(printf "above\nbelow\nleft-of\nright-of" | fzf)
 
-if [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
+MODES=$($DATA | awk -v out="$OUTPUT" '$1 == out {found=1; next} found && /^[[:space:]]+[0-9]/ {print $1} found && !/^[[:space:]]+/ {exit}')
+
+MODE=$(printf "%s\n" "$MODES" | fzf)
+
+if [ -z "$MODE" ] || [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
   echo "ERROR"
   exit 1
 fi
 
-xrandr --output "$OUTPUT" --"$DIRECTION" "$PRIMARY" --auto
+xrandr --output "$OUTPUT" --mode "$MODE" --"$DIRECTION" "$PRIMARY"
 echo "OK ($OUTPUT $DIRECTION $PRIMARY)"
