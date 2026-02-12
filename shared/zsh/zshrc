@@ -1,29 +1,44 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# exports
 export EDITOR='nvim'
 export PAGER='less'
 
+# tab completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+
+# vi mode
 bindkey -v
 
-alias y='yazi'
-
+# stupid aliases
 alias td='tmux detach'
 alias ta='tmux attach -t'
 alias trs='tmux rename-session'
-
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-
 alias open='xdg-open'
 
+# yazi wraper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+# zoxide and prompt
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-[ -s "/Users/t/.bun/_bun" ] && source "/Users/t/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
+# path stuff
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# docker path
 COLIMA_SOCK="$HOME/.colima/default/docker.sock"
 if [[ "$(uname -s)" != "Linux" ]] && [[ -S "$COLIMA_SOCK" ]]; then
   export DOCKER_HOST="unix://${COLIMA_SOCK}"
