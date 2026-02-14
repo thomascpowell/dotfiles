@@ -33,6 +33,13 @@ function y() {
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+# prompt
+# autoload -Uz vcs_info
+# precmd() { vcs_info }
+# zstyle ':vcs_info:git:*' formats '%b'
+# setopt prompt_subst
+# PROMPT=$'\n%~${vcs_info_msg_0_:+ ${vcs_info_msg_0_}}\n➜ '
+
 # path stuff
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$BUN_INSTALL/bin:$PATH"
