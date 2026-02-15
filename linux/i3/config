@@ -10,6 +10,8 @@ bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator
 
 # no frames
 default_border none
+for_window [window_type="dialog"] border none
+for_window [window_type="utility"] border none
 
 # bar 
 bar {
