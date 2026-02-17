@@ -18,7 +18,10 @@ alias trs='tmux rename-session'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias open='xdg-open'
+
+if [[ "$(uname -s)" == "Linux" ]]; then
+  alias open='xdg-open'
+fi
 
 # yazi wraper
 function y() {
