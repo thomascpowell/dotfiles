@@ -1,0 +1,91 @@
+#!/bin/bash
+set -euo pipefail
+
+# Script for symlinking config files
+
+DOTFILES="$HOME/dotfiles"
+TARGET="$HOME/.config"
+IS_LINUX=$([ "$(uname -s)" = "Linux" ] && echo 1 || echo 0)
+
+MAC_DIRS=(
+  "aerospace"
+  "ghostty"
+  "karabiner"
+)
+
+LINUX_DIRS=(
+  "i3"
+  "i3blocks"
+  "kitty"
+  "picom"
+  "rofi"
+  "fontconfig"
+)
+
+SHARED_DIRS=(
+  "fastfetch"
+  "nvim"
+  "tmux"
+  "yazi"
+  "git"
+  "zathura"
+  "mpv"
+)
+
+# Symlink Linux-specific configurations
+
+if [[ "$IS_LINUX" -eq 1 ]]; then
+  ./create_symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
+  ./create_symlink "$DOTFILES/linux/x/.Xresources" "$HOME/.Xresources"
+  for dir in "${LINUX_DIRS[@]}"; do
+    ./create_symlink "$DOTFILES/linux/$dir" "$TARGET/$dir"
+  done
+fi
+
+# Symlink Mac-specific configurations
+
+if [[ "$IS_LINUX" -eq 0 ]]; then
+  for dir in "${MAC_DIRS[@]}"; do
+    ./create_symlink "$DOTFILES/mac/$dir" "$TARGET/$dir"
+  done
+fi
+
+# Symlink shared programs
+
+for dir in "${SHARED_DIRS[@]}"; do
+  ./create_symlink "$DOTFILES/shared/$dir" "$TARGET/$dir"
+done
+./create_symlink "$DOTFILES/shared/zsh/zshrc" "$HOME/.zshrc"
+./create_symlink "$DOTFILES/shared/starship/starship.toml" "$TARGET/starship.toml"
+
+# Symlink scripts to .local/bin
+
+for script in "$DOTFILES/scripts"/*; do
+  ./create_symlink "$script" "$HOME/.local/bin/$(basename "$script")"
+done
+
+# Getting Firefox user profiles
+
+get_firefox_profiles() {
+  local base
+  if [ -d "$HOME/Library/Application Support/Firefox/Profiles" ]; then
+      base="$HOME/Library/Application Support/Firefox/Profiles"
+  elif [ -d "$HOME/.librewolf" ]; then
+      base="$HOME/.librewolf"
+  else
+      return
+  fi
+  printf '%s\n' "$base"/*.default*
+}
+
+# Symlink CSS for each profile
+
+while IFS= read -r PROFILE; do
+  [ -d "$PROFILE" ] || continue
+  echo "updating firefox profile: $PROFILE"
+  mkdir -p "$PROFILE/chrome"
+  ./create_symlink "$DOTFILES/shared/firefox/userChrome.css" "$PROFILE/chrome/userChrome.css"
+done < <(get_firefox_profiles)
+
+# Exit
+printf "\n%s\n" "OK"
