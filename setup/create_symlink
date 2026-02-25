@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+# Helper script for creating symlinks
+
+src="$1"
+dest="$2"
+mkdir -p "$(dirname "$dest")"
+if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+  echo "file exists and is not a symlink: $dest"
+  echo "(exiting)"
+  exit 1
+fi
+if [ -L "$dest" ]; then
+  rm "$dest"
+  echo "removed existing symlink: $dest"
+fi
+ln -s "$src" "$dest"
+echo "linked: $src -> $dest"
