@@ -1,11 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end,
+  build = ":TSUpdate",
+  lazy = false,
+  tag = "v0.10.0",
+  opts = {
+    sync_install = false,
+    highlight = { enable = true },
+    indent = { enable = true },
+  },
 }
