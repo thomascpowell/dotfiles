@@ -23,7 +23,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   alias open='xdg-open'
 fi
 
-# yazi wraper
+# yazi wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
