@@ -1,6 +1,8 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+	defaults = {
+		preview = { treesitter = true },
+  },
   config = function()
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Telescope find files' })
