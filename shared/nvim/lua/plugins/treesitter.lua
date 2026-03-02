@@ -1,17 +1,22 @@
-local langs = { "typescript", "javascript", "html", "css", "svelte", "rust", "lua", "python", "c", "markdown", "bash", "php" }
+local parsers = { "typescript", "javascript", "css", "svelte", "rust", "python", "c", "bash", "php", 'diff', 'html',
+  'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', "typst" }
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = langs,
-	callback = function() vim.treesitter.start() end,
-})
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
+  'nvim-treesitter/nvim-treesitter',
   lazy = false,
-  opts = {
-    ensure_installed = langs,
-    sync_install = false,
-    highlight = { enable = true },
-    indent = { enable = true },
-  },
+  build = ':TSUpdate',
+  branch = 'main',
+  config = function()
+    require('nvim-treesitter').install(parsers)
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function(args)
+        local buf, filetype = args.buf, args.match
+        local language = vim.treesitter.language.get_lang(filetype)
+        if not language then return end
+        if not vim.treesitter.language.add(language) then return end
+        vim.treesitter.start(buf, language)
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
+    })
+  end,
 }
