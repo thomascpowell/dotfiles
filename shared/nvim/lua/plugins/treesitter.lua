@@ -1,4 +1,4 @@
-local langs = { "typescript", "javascript", "html", "css", "svelte", "rust", "lua", "python", "c", "markdown", "bash" }
+local langs = { "typescript", "javascript", "html", "css", "svelte", "rust", "lua", "python", "c", "markdown", "bash", "php" }
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = langs,
