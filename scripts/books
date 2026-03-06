@@ -1,0 +1,4 @@
+#!/bin/sh
+
+BOOK="$(fd -e pdf . ~/books | fzf --preview 'pdfinfo {}')"
+if [ -n "$BOOK" ]; then zathura "$BOOK"; fi
