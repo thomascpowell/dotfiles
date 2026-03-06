@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# external display setup script
-
 DATA=xrandr
 
 # get the primary monitor name by looking for "[name] connected primary"

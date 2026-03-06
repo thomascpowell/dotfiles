@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# simple script that prints the 16 ansi colors in order
-
 term_name=$(basename "$TERM")
 output="$term_name: "
 
