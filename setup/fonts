@@ -3,15 +3,15 @@ set -euo pipefail
 
 # Script for symlinking fonts on Linux
 
-DOTFILES="$HOME/dotfiles"
-TARGET="$HOME/.local/share/fonts/"
+TARGET="$HOME/.local/share/fonts"
 
 if [ "$(uname -s)" != "Linux" ]; then 
   echo "SYSTEM IS NOT LINUX"
-  exit;
+  exit
 fi
 
-./create_symlink "$DOTFILES/misc/fonts/emoji" "$TARGET/emoji"
-./create_symlink "$DOTFILES/misc/fonts/sf" "$TARGET/sf"
+while IFS= read -r font; do
+  ./create_symlink "$font" "$TARGET/$(basename "$font")"
+done < <(fd -t d -I . ~/dotfiles/misc/fonts)
 
 echo "OK"

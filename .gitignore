@@ -6,4 +6,5 @@ fish/
 karabiner/
 swi-prolog/
 nvim/spell
+misc/fonts/*
 .DS_Store
