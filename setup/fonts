@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Script for symlinking fonts on Linux
+# Automatically symlinks from ~/dotfiles/misc/fonts/
 
 TARGET="$HOME/.local/share/fonts"
 
