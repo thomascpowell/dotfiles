@@ -46,7 +46,7 @@ fi
 
 if [[ "$IS_LINUX" -eq 0 ]]; then
   for dir in "${MAC_DIRS[@]}"; do
-    ./create_symlink "$DOTFILES/mac/$dir" "$TARGET/$dir"
+    ./create_symlink "$DOTFILES/misc/mac/$dir" "$TARGET/$dir"
   done
 fi
 
