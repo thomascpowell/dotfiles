@@ -27,7 +27,3 @@ vim.keymap.set('n', 'K', function()
     border = "rounded"
   })
 end, { noremap = true, silent = true })
-
-
-vim.keymap.set('n', '+', '<C-a>', { silent = true })
-vim.keymap.set('n', '-', '<C-x>', { silent = true })
