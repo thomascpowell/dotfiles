@@ -4,10 +4,6 @@ set $mod Mod4
 gaps outer 0
 gaps inner 12
 
-# lock
-exec --no-startup-id xautolock -time 5 -locker "i3lock -c 000000 --no-unlock-indicator"
-bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator
-
 # no frames
 default_border none
 for_window [window_type="dialog"] border none
@@ -16,7 +12,7 @@ for_window [window_type="utility"] border none
 # bar 
 bar {
   status_command i3blocks
-  position bottom
+  position top
   font pango: JetBrainsMono Nerd Font Mono 12
   i3bar_command i3bar --transparency
   colors {
@@ -46,6 +42,7 @@ bindsym $mod+p exec playerctl play-pause
 bindsym $mod+s exec playerctl next
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
+bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-password --no-fork
 
 # laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
