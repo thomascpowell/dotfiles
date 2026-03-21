@@ -42,7 +42,7 @@ bindsym $mod+p exec playerctl play-pause
 bindsym $mod+s exec playerctl next
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
-bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-password --no-fork
+bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-password --nofork
 
 # laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
