@@ -1,0 +1,17 @@
+#!/bin/sh
+
+DATA=$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2);
+
+CHAR=$(echo "$DATA" | awk -F';' '{print $1 " " $2}' | rofi -dmenu | awk '{print $1}')
+
+[ -n "$CHAR" ] && xdotool type --delay 0 "$CHAR"
+
+exit;
+
+__DATA__
+á; a
+é; e
+í; i
+ó; o
+ú; u
+ñ; n

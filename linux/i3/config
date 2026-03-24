@@ -43,6 +43,7 @@ bindsym $mod+s exec playerctl next
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-password --nofork
+bindsym $mod+a exec ~/dotfiles/linux/i3/scripts/accent
 
 # laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
