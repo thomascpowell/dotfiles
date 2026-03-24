@@ -5,16 +5,16 @@ markup=pango
 font=JetBrainsMono Nerd Font 12
 
 [bluetooth]
-command="/home/t/.config/i3blocks/bluetooth.sh"
+command="/home/t/.config/i3blocks/scripts/bluetooth"
 interval=5
 
 [volume]
 # pipewire, pirewire pulse, pavucontrol
-command="/home/t/.config/i3blocks/volume.sh"
+command="/home/t/.config/i3blocks/scripts/volume"
 interval=5
 
 [battery]
-command="/home/t/.config/i3blocks/battery.sh"
+command="/home/t/.config/i3blocks/scripts/battery"
 interval=20
 
 [time]
