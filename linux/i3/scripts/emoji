@@ -2,7 +2,7 @@
 
 DATA=$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2);
 
-CHAR=$(echo "$DATA" | awk -F';' '{print $1 " " $2}' | rofi -sorting-method fzf -dmenu | awk '{print $1}')
+CHAR=$(echo "$DATA" | awk -F';' '{print $1 " " $2}' | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}')
 
 [ -n "$CHAR" ] && xdotool type --delay 0 "$CHAR"
 
