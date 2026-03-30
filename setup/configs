@@ -37,6 +37,7 @@ SHARED_DIRS=(
 if [[ "$IS_LINUX" -eq 1 ]]; then
   ./create_symlink "$DOTFILES/linux/x/.xinitrc" "$HOME/.xinitrc"
   ./create_symlink "$DOTFILES/linux/x/.Xresources" "$HOME/.Xresources"
+  ./create_symlink "$DOTFILES/linux/x/.xprofile" "$HOME/.xprofile"
   for dir in "${LINUX_DIRS[@]}"; do
     ./create_symlink "$DOTFILES/linux/$dir" "$TARGET/$dir"
   done
