@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tmux >/dev/null 2>&1
+pwd | awk -F "/" '{print $NF}' | xargs tmux rename-session
