@@ -1,4 +1,5 @@
 #!/bin/sh
 
-tmux >/dev/null 2>&1
-pwd | awk -F "/" '{print $NF}' | xargs tmux rename-session
+dir=$(pwd | xargs basename)
+[ "$TERM_PROGRAM" = tmux ] && tmux rename-session "$dir" && exit;
+tmux new-session -A -s "$dir"
