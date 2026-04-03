@@ -8,9 +8,7 @@ PRIMARY=$("$DATA" | awk '$3=="primary" && $2=="connected" {print $1}')
 OUTPUT=$("$DATA" | awk -v primary="$PRIMARY" '$2=="connected" && $1!=primary {print $1}' | fzf)
 
 DIRECTION=$(printf "above\nbelow\nleft-of\nright-of" | fzf)
-
 MODES=$($DATA | awk -v out="$OUTPUT" '$1 == out {found=1; next} found && /^[[:space:]]+[0-9]/ {print $1} found && !/^[[:space:]]+/ {exit}')
-
 MODE=$(printf "%s\n" "$MODES" | fzf)
 
 if [ -z "$MODE" ] || [ -z "$OUTPUT" ] || [ -z "$DIRECTION" ]; then
