@@ -1,11 +1,6 @@
 #!/bin/sh
 
-DATA=$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2);
-
-CHAR=$(echo "$DATA" | awk -F';' '{print $1 " " $2}' | rofi -dmenu | awk '{print $1}')
-
-[ -n "$CHAR" ] && xdotool type --delay 0 "$CHAR"
-
+printf '%s' "$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2)" | awk -F';' '{print $1 " " $2}' | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | xdotool type --file -
 exit;
 
 __DATA__
