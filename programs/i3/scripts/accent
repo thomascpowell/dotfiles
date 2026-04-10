@@ -1,0 +1,12 @@
+#!/bin/sh
+
+printf '%s' "$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2)" | awk -F';' '{print $1 " " $2}' | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard
+exit;
+
+__DATA__
+á; a
+é; e
+í; i
+ó; o
+ú; u
+ñ; n
