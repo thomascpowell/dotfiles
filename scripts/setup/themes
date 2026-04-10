@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Script for setting up themes
+
+THEMES="$HOME/dotfiles/misc/themes"
+
+# Symlink configs
+
+./create_symlink "$THEMES/config/gtk-3.0/" "$HOME/.config/gtk-3.0"
+./create_symlink "$THEMES/config/gtk-4.0/" "$HOME/.config/gtk-4.0"
+./create_symlink "$THEMES/config/qt5ct/" "$HOME/.config/qt5ct"
+./create_symlink "$THEMES/config/qt6ct/" "$HOME/.config/qt6ct"
+
+# Symlink GTK themes
+./create_symlink "$THEMES/gtk" "$HOME/.themes/ll"
