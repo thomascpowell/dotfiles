@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Getting Firefox user profiles
+
+get_firefox_profiles() {
+  local base
+  if [ -d "$HOME/Library/Application Support/Firefox/Profiles" ]; then
+      base="$HOME/Library/Application Support/Firefox/Profiles"
+  elif [ -d "$HOME/.librewolf" ]; then
+      base="$HOME/.librewolf"
+  else
+      return
+  fi
+  printf '%s\n' "$base"/*.default*
+}
+
+# Symlink CSS for each profile
+
+while IFS= read -r PROFILE; do
+  [ -d "$PROFILE" ] || continue
+  echo "updating firefox profile: $PROFILE"
+  mkdir -p "$PROFILE/chrome"
+  ./create_symlink "$DOTFILES/misc/firefox/userChrome.css" "$PROFILE/chrome/userChrome.css"
+done < <(get_firefox_profiles)
+
+# Exit
+printf "\n%s\n" "OK"
