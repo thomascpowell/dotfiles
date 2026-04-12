@@ -4,89 +4,49 @@ set -euo pipefail
 # Script for symlinking config files
 
 DOTFILES="$HOME/dotfiles"
-TARGET="$HOME/.config"
+CONFIG="$HOME/.config"
 IS_LINUX=$([ "$(uname -s)" = "Linux" ] && echo 1 || echo 0)
 
-MAC_DIRS=(
-  "aerospace"
-  "ghostty"
-  "karabiner"
-)
+link_dir_contents() {
+  local src_base="$1"
+  local dest_base="$2"
+  [ -d "$src_base" ] || return
 
-LINUX_DIRS=(
-  "i3"
-  "i3blocks"
-  "kitty"
-  "picom"
-  "rofi"
-  "fontconfig"
-)
-
-SHARED_DIRS=(
-  "fastfetch"
-  "nvim"
-  "tmux"
-  "yazi"
-  "git"
-  "zathura"
-  "mpv"
-)
-
-# Symlink Linux-specific configurations
-
-if [[ "$IS_LINUX" -eq 1 ]]; then
-  ./create_symlink "$DOTFILES/programs/x/.xinitrc" "$HOME/.xinitrc"
-  ./create_symlink "$DOTFILES/programs/x/.Xresources" "$HOME/.Xresources"
-  ./create_symlink "$DOTFILES/programs/x/.xprofile" "$HOME/.xprofile"
-  for dir in "${LINUX_DIRS[@]}"; do
-    ./create_symlink "$DOTFILES/programs/$dir" "$TARGET/$dir"
+  for path in "$src_base"/*; do
+    [ -e "$path" ] || continue
+    local name
+    name="$(basename "$path")"
+    ./create_symlink "$path" "$dest_base/$name"
   done
-fi
-
-# Symlink Mac-specific configurations
-
-if [[ "$IS_LINUX" -eq 0 ]]; then
-  for dir in "${MAC_DIRS[@]}"; do
-    ./create_symlink "$DOTFILES/misc/mac/$dir" "$TARGET/$dir"
-  done
-fi
-
-# Symlink shared programs
-
-for dir in "${SHARED_DIRS[@]}"; do
-  ./create_symlink "$DOTFILES/programs/$dir" "$TARGET/$dir"
-done
-./create_symlink "$DOTFILES/programs/zsh/zshrc" "$HOME/.zshrc"
-./create_symlink "$DOTFILES/programs/starship/starship.toml" "$TARGET/starship.toml"
-
-# Symlink scripts to .local/bin
-
-for script in "$DOTFILES/scripts/general"/*; do
-  ./create_symlink "$script" "$HOME/.local/bin/$(basename "$script")"
-done
-
-# Getting Firefox user profiles
-
-get_firefox_profiles() {
-  local base
-  if [ -d "$HOME/Library/Application Support/Firefox/Profiles" ]; then
-      base="$HOME/Library/Application Support/Firefox/Profiles"
-  elif [ -d "$HOME/.librewolf" ]; then
-      base="$HOME/.librewolf"
-  else
-      return
-  fi
-  printf '%s\n' "$base"/*.default*
 }
 
-# Symlink CSS for each profile
+# Linux
 
-while IFS= read -r PROFILE; do
-  [ -d "$PROFILE" ] || continue
-  echo "updating firefox profile: $PROFILE"
-  mkdir -p "$PROFILE/chrome"
-  ./create_symlink "$DOTFILES/programs/firefox/userChrome.css" "$PROFILE/chrome/userChrome.css"
-done < <(get_firefox_profiles)
+if [[ "$IS_LINUX" -eq 1 ]]; then
+  LINUX_PROGRAMS="$DOTFILES/programs/linux"
+  link_dir_contents "$LINUX_PROGRAMS/config" "$CONFIG"
+  link_dir_contents "$LINUX_PROGRAMS/home" "$HOME"
+fi
+
+# Mac
+
+if [[ "$IS_LINUX" -eq 0 ]]; then
+  MAC_PROGRAMS="$DOTFILES/programs/mac"
+  link_dir_contents "$MAC_PROGRAMS" "$CONFIG"
+fi
+
+# Shared
+
+SHARED_PROGRAMS="$DOTFILES/programs/shared"
+link_dir_contents "$SHARED_PROGRAMS" "$CONFIG"
+./create_symlink "$SHARED_PROGRAMS/zsh/.zshrc" "$HOME/.zshrc"
+
+# Scripts
+
+link_dir_contents "$DOTFILES/scripts/general" "$HOME/.local/bin"
+
 
 # Exit
 printf "\n%s\n" "OK"
+exit;
+

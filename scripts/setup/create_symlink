@@ -16,4 +16,4 @@ if [ -L "$dest" ]; then
   echo "removed existing symlink: $dest"
 fi
 ln -s "$src" "$dest"
-echo "linked: $src -> $dest"
+echo "linked: $src --> $dest"
