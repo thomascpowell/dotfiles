@@ -44,8 +44,8 @@ bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-password --nofork
 
-bindsym $mod+a exec ~/dotfiles/programs/i3/scripts/accent
-bindsym $mod+e exec ~/dotfiles/programs/i3/scripts/emoji
+bindsym $mod+a exec ~/dotfiles/programs/linux/config/i3/scripts/accent
+bindsym $mod+e exec ~/dotfiles/programs/linux/config/i3/scripts/emoji
 
 # laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%
