@@ -74,16 +74,15 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "typst", "text" },
-  callback = function()
-    local opt = vim.opt_local
-    opt.wrap = true
-    opt.linebreak = true
-    opt.breakindent = true
-    vim.keymap.set("n", "j", "gj", { buffer = true })
-    vim.keymap.set("n", "k", "gk", { buffer = true })
-    vim.keymap.set("v", "j", "gj", { buffer = true })
-    vim.keymap.set("v", "k", "gk", { buffer = true })
-  end,
-})
+local function writing_mode()
+  local opt = vim.opt_local
+  opt.wrap = true
+  opt.linebreak = true
+  opt.breakindent = true
+  opt.spell = true
+  vim.keymap.set("n", "j", "gj", { buffer = true })
+  vim.keymap.set("n", "k", "gk", { buffer = true })
+  vim.keymap.set("n", "0", "g0", { buffer = true })
+  vim.keymap.set("n", "$", "g$", { buffer = true })
+end
+vim.api.nvim_create_user_command("Writing", writing_mode, {})
