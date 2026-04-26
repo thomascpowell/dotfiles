@@ -30,9 +30,10 @@ exec_always --no-startup-id feh --bg-scale ~/dotfiles/misc/wall/mountain.jpg
 exec_always --no-startup-id picom 
 exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
-# configuration
+# input
 exec_always --no-startup-id xset r rate 400 30
 exec_always --no-startup-id xinput --set-prop 10 "libinput Accel Speed" 0.7
+exec_always --no-startup-id xinput --set-prop 14 "libinput Accel Speed" -0.5
 exec_always --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 
 # general binds
