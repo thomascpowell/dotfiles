@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BACKLIGHT="/sys/class/backlight/intel_backlight"
+
+read -r CURRENT < "$DIR/$BACKLIGHT/brightness"
+read -r MAX < "$DIR/$BACKLIGHT/max_brightness"
+
+PERCENT=$(( CURRENT * 100 / MAX ))
+
+[ -n "$CURRENT" ] && [ -n "$MAX" ] && echo "DIS $PERCENT%"

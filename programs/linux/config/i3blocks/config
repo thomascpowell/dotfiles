@@ -1,8 +1,8 @@
 [global]
 interval=10
-separator=false
 markup=pango
 font=JetBrainsMono Nerd Font 12
+
 
 [bluetooth]
 command="/home/t/.config/i3blocks/scripts/bluetooth"
@@ -12,6 +12,10 @@ interval=5
 # pipewire, pirewire pulse, pavucontrol
 command="/home/t/.config/i3blocks/scripts/volume"
 interval=5
+
+[brightness]
+command="/home/t/.config/i3blocks/scripts/brightness"
+interval=20
 
 [battery]
 command="/home/t/.config/i3blocks/scripts/battery"
