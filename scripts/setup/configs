@@ -46,8 +46,6 @@ link_dir_contents "$SHARED_PROGRAMS" "$CONFIG"
 
 link_dir_contents "$DOTFILES/scripts/general" "$HOME/.local/bin"
 
-
 # Exit
 printf "\n%s\n" "OK"
 exit;
-
