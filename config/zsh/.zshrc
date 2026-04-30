@@ -1,3 +1,5 @@
+. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
 # exports
 export EDITOR='nvim'
 export PAGER='less'
@@ -21,6 +23,7 @@ alias gp='git push'
 
 # reasonable aliases
 alias cb='xclip -selection clipboard'
+alias hms='home-manager switch --flake'
 [[ "$(uname -s)" == "Linux" ]] && alias open='xdg-open';
 
 # yazi wrapper
@@ -40,13 +43,6 @@ eval "$(zoxide init zsh)"
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# docker path
-COLIMA_SOCK="$HOME/.colima/default/docker.sock"
-if [[ "$(uname -s)" != "Linux" ]] && [[ -S "$COLIMA_SOCK" ]]; then
-  export DOCKER_HOST="unix://${COLIMA_SOCK}"
-else
-  export DOCKER_HOST="unix:///var/run/docker.sock"
-fi
+export PATH="$HOME/.nix-profile/bin:$PATH"
 
 eval fastfetch

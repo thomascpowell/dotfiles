@@ -27,8 +27,11 @@
     "break",
     "cpu",
     "memory",
-    "packages",
-    "terminal",
+    {
+        "type": "disk",
+        "folders": "/"
+    },
+    "uptime",
     "wm"
   ]
 }
