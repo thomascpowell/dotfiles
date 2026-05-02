@@ -3,7 +3,7 @@
 {
   home.username = "t";
   home.homeDirectory = "/home/t";
-  devices.hostname = "thinkpad";
+  device.hostname = "thinkpad";
 
   imports = [
     ./common.nix
@@ -14,6 +14,7 @@
 
   home.file.".config/kitty".source = ../config/kitty;
 
-  devices.trackpad = 10;
-  devices.trackpoint = 14;
+  device.trackpad_id = 10;
+  device.trackpoint_id = 14;
+  device.dpi = 144;
 }

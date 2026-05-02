@@ -3,7 +3,7 @@
 {
   home.packages = [
     (pkgs.writeShellScriptBin "hms" ''
-      home-manager switch --flake ".#${config.devices.hostname}"
+      home-manager switch --flake ".#${config.device.hostname}"
     '')
   ];
 }

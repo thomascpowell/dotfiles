@@ -4,7 +4,7 @@
   imports = [
     ../modules/shell.nix
     ../modules/hms.nix
-    ../modules/devices.nix
+    ../modules/device.nix
   ];
 
   home.stateVersion = "26.05";
