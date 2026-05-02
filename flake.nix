@@ -15,12 +15,12 @@
     homeConfigurations = {
       thinkpad = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [ ./home/thinkpad.nix ];
+        modules = [ ./hosts/thinkpad.nix ];
       };
 
       m2 = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-        modules = [ ./home/m2.nix ];
+        modules = [ ./hosts/m2.nix ];
       };
     };
   };
