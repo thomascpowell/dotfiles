@@ -2,8 +2,6 @@
 
 {
   options.devices = {
-
-    # Input (for laptops)
     trackpad = lib.mkOption {
       type = lib.types.nullOr lib.types.int;
       default = null;
@@ -12,7 +10,6 @@
       type = lib.types.nullOr lib.types.int;
       default = null;
     };
-
     hostname = lib.mkOption {
       type = lib.types.str;
     };
