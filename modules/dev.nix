@@ -1,14 +1,14 @@
 { pkgs, lib, ... }:
 
+# Toolchains, LSP
+
 {
   home.packages = with pkgs; [
-    # toolchains
     go
     (lib.lowPrio rustup)
     php
     nodejs_24
 
-    # lsp
     rust-analyzer
     pyright
     typescript-language-server

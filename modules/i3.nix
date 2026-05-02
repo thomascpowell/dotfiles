@@ -1,5 +1,7 @@
 { config, ... }:
 
+# Window manager
+
 {
   home.file.".config/i3/config".source = ../config/i3/config;
   home.file.".config/i3blocks".source = ../config/i3blocks;

@@ -1,5 +1,8 @@
 { config, ... }:
 
+# Custom GTK/QT theme
+# System-wide color palette was adapted from lackluster.nvim (MIT)
+
 let
   path = "${config.home.homeDirectory}/dotfiles/theme";
 in

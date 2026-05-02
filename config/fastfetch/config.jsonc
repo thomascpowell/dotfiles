@@ -28,8 +28,8 @@
     "cpu",
     "memory",
     {
-        "type": "disk",
-        "folders": "/"
+      "type": "disk",
+      "folders": "/"
     },
     "uptime",
     "wm"

@@ -1,5 +1,7 @@
 { pkgs, config, ... }:
 
+# Alias for running home-manager switch
+
 {
   home.packages = [
     (pkgs.writeShellScriptBin "hms" ''

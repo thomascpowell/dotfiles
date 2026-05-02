@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+# CLI tools
+
 {
   home.packages = with pkgs; [
     git

@@ -43,7 +43,6 @@ inputbar {
   background-color: @gray3;
   padding: 8px 16px;
   spacing: 16px;
-  // children: [ prompt, entry ];
   children: [ entry ];
 }
 
