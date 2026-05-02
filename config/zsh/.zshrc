@@ -23,7 +23,6 @@ alias gp='git push'
 
 # reasonable aliases
 alias cb='xclip -selection clipboard'
-alias hms='home-manager switch --flake'
 [[ "$(uname -s)" == "Linux" ]] && alias open='xdg-open';
 
 # yazi wrapper

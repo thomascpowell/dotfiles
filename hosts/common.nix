@@ -3,6 +3,8 @@
 {
   imports = [
     ../modules/shell.nix
+    ../modules/hms.nix
+    ../modules/devices.nix
   ];
 
   home.stateVersion = "26.05";
@@ -15,5 +17,4 @@
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
   ];
-
 }
