@@ -8,6 +8,8 @@
   home.stateVersion = "26.05";
 
 
+  programs.home-manager.enable = true;
+
   home.file.".config/mpv".source = ../config/mpv;
   home.file.".config/zathura".source = ../config/zathura;
 
