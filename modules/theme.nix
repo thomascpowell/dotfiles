@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ ... }:
 
 {
   home.file.".config/gtk-3.0".source = ../config/gtk-3.0;

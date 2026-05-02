@@ -17,7 +17,7 @@ vim.pack.add({
 
 -- lsp
 vim.lsp.enable({ "svelte", "ts_ls", "html", "emmetls", "cssls", "phpactor", "gopls", "lua_ls", "pyright", "clangd",
-  "rust_analyzer", "bashls", "tinymist" })
+  "rust_analyzer", "bashls", "tinymist", "nixd" })
 
 -- colorscheme
 local lackluster = require("lackluster")
@@ -49,7 +49,7 @@ require("oil").setup({
 
 -- treesitter
 local default_parsers = { "typescript", "javascript", "css", "svelte", "rust", "python", "c", "bash", "php", 'diff',
-  'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', "typst" }
+  'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', "typst", "nix" }
 require("nvim-treesitter").setup({
   ensure_installed = default_parsers,
   highlight = { enable = true },

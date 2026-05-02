@@ -4,7 +4,7 @@
   home.username = "t";
   home.homeDirectory = "/Users/t";
 
-  imports = [ 
+  imports = [
     ./common.nix
     ../modules/colima.nix
   ];

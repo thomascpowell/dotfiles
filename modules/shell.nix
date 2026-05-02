@@ -14,7 +14,7 @@
     source = ../scripts;
     recursive = true;
   };
-  
+
   home.file.".config/git".source = ../config/git;
   home.file.".config/tmux".source = ../config/tmux;
   home.file.".config/yazi".source = ../config/yazi;

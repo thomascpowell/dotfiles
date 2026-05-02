@@ -21,5 +21,7 @@
     phpactor
     bash-language-server
     tinymist
+    nixd
+    nixfmt-rfc-style
   ];
 }
