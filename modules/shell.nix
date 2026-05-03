@@ -10,6 +10,13 @@
     neovim
     starship
     fastfetch
+    btop
+    fd
+    fzf
+    github-cli
+    gitleaks
+    tree
+    zoxide
   ];
 
   home.file.".local/bin" = {

@@ -14,7 +14,7 @@ for_window [window_type="utility"] border none
 # bar 
 bar {
   status_command i3blocks
-  position bottom
+  position top
   font pango: JetBrainsMono Nerd Font Mono 12
   i3bar_command i3bar --transparency
   colors {
@@ -50,6 +50,7 @@ bindsym $mod+Escape exec i3lock -c 000000 --no-unlock-indicator --ignore-empty-p
 
 bindsym $mod+a exec ~/.local/bin/accent
 bindsym $mod+e exec ~/.local/bin/emoji
+bindsym $mod+b exec ~/.local/bin/connect_bluetooth $(rofi -dmenu -window)
 
 # laptop buttons
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%

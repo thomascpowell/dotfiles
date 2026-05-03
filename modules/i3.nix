@@ -12,7 +12,7 @@
     if config.device.trackpad_id != null && config.device.trackpoint_id != null then
       ''
         exec_always --no-startup-id xinput --set-prop ${toString config.device.trackpad_id} "libinput Accel Speed" 0.7
-        exec_always --no-startup-id xinput --set-prop ${toString config.device.trackpoint_id} "libinput Accel Speed" -0.5
+        exec_always --no-startup-id xinput --set-prop ${toString config.device.trackpoint_id} "libinput Accel Speed" -0.4
       ''
     else
       "";
