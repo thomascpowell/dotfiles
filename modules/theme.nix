@@ -1,13 +1,22 @@
-{ config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 # Custom GTK/QT theme
 # System-wide color palette was adapted from lackluster.nvim (MIT)
 
-let
-  path = "${config.home.homeDirectory}/dotfiles/theme";
-in
-
 {
+  home.packages = lib.optionals config.device.is_nixos (
+    with pkgs;
+    [
+      qt5ct
+      qt6ct
+    ]
+  );
+
   home.file.".config/gtk-3.0".source = ../config/gtk-3.0;
   home.file.".config/gtk-4.0".source = ../config/gtk-4.0;
   home.file.".themes/ll".source = ../theme/gtk;
@@ -16,13 +25,11 @@ in
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
-  home.file.".xprofile".text = ''
-    export QT_QPA_PLATFORMTHEME=qt6ct
-  '';
+  home.file.".xprofile".text = "export QT_QPA_PLATFORMTHEME=qt6ct";
 
   home.file.".config/qt6ct/qt6ct.conf".text = ''
     [Appearance]
-    color_scheme_path=${path}/qt6ct/colors/ll.conf
+    color_scheme_path=${../theme/qt6ct/colors/ll.conf}
     custom_palette=true
     standard_dialogs=default
     style=Fusion
@@ -56,7 +63,7 @@ in
 
   home.file.".config/qt5ct/qt5ct.conf".text = ''
     [Appearance]
-    color_scheme_path=${path}/qt5ct/colors/ll.conf
+    color_scheme_path=${../theme/qt5ct/colors/ll.conf}
     custom_palette=true
     standard_dialogs=gtk3
     style=Fusion
@@ -87,5 +94,4 @@ in
     force_raster_widgets=1
     ignored_applications=@Invalid()
   '';
-
 }

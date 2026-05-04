@@ -13,8 +13,6 @@
     btop
     fd
     fzf
-    github-cli
-    gitleaks
     tree
     zoxide
   ];

@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 
-# Toolchains, LSP
+# Toolchains, LSPs, etc.
 
 {
   home.packages = with pkgs; [
@@ -8,6 +8,7 @@
     (lib.lowPrio rustup)
     php
     nodejs_24
+    typst
 
     rust-analyzer
     pyright
@@ -23,5 +24,11 @@
     tinymist
     nixd
     nixfmt
+
+    github-cli
+    gitleaks
+    acpi
+    ncdu
+    lazygit
   ];
 }
