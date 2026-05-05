@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   home.username = "t";
@@ -7,8 +7,9 @@
 
   imports = [
     ../common.nix
-    ../../modules/colima.nix
   ];
+
+  home.sessionVariables.DOCKER_HOST = "unix:/${config.device.homeDirectory}/.colima/default/docker.sock";
 
   home.file.".config/ghostty".source = ../../config/ghostty;
   home.file.".config/aerospace".source = ../../config/aerospace;

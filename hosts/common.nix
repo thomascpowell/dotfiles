@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules/shell.nix
-    ../modules/hms.nix
+    ../modules/commands.nix
     ../modules/device.nix
   ];
 

@@ -3,6 +3,8 @@
 BAT_DIR=/sys/class/power_supply
 bat=$(ls "$BAT_DIR" | grep '^BAT' | head -n1)
 
+[ -z "$bat" ] && exit
+
 cap=$(cat "$BAT_DIR/$bat/capacity")
 
 if grep -q "Charging" "$BAT_DIR/$bat/status"; then

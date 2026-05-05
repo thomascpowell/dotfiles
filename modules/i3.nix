@@ -29,8 +29,17 @@
   home.file.".config/i3/config".source = ../config/i3/config;
   home.file.".config/i3blocks".source = ../config/i3blocks;
   home.file.".config/picom".source = ../config/picom;
-  home.file.".config/rofi".source = ../config/rofi;
   home.file.".config/i3/wallpaper.jpg".source = ../misc/wall/mountain.jpg;
+
+  home.file.".config/rofi/theme.rasi".source = ../config/rofi/theme.rasi;
+  home.file.".config/rofi/config.rasi".text = ''
+    configuration {
+      modi: "drun,run,window";
+      show-icons: false;
+      dpi: ${toString config.device.dpi};
+    }
+    @theme "theme"
+  '';
 
   home.file.".config/i3/inputs.conf".text =
     if config.device.trackpad_id != null && config.device.trackpoint_id != null then

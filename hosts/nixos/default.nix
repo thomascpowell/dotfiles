@@ -2,16 +2,21 @@
 
 {
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+
+  time.timeZone = "America/New_York";
 
   services.pipewire = {
     enable = true;
@@ -26,6 +31,11 @@
 
   services.displayManager.ly.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -34,7 +44,10 @@
   users.users.t = {
     isNormalUser = true;
     description = "t";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -44,7 +57,10 @@
     git
     vim
     curl
+    bash
+    gcc
+    home-manager
   ];
 
-  system.stateVersion = "26.05"; 
+  system.stateVersion = "26.05";
 }

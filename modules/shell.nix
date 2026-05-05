@@ -15,6 +15,7 @@
     fzf
     tree
     zoxide
+    ripgrep
   ];
 
   home.file.".local/bin" = {

@@ -5,7 +5,9 @@
 {
   home.packages = with pkgs; [
     go
-    (lib.lowPrio rustup)
+    # (lib.lowPrio rustup)
+    cargo
+    rustc
     php
     nodejs_24
     typst
@@ -30,5 +32,6 @@
     acpi
     ncdu
     lazygit
+    tree-sitter
   ];
 }

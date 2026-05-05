@@ -10,11 +10,11 @@
     ../../modules/theme.nix
     ../../modules/i3.nix
     ../../modules/dev.nix
+    ../../modules/gui.nix
+    ../../modules/fonts.nix
   ];
 
-  home.file.".config/kitty".source = ../../config/kitty;
-
-  device.dpi = 144;
+  device.dpi = 120;
   device.is_nixos = true;
   device.trackpad_id = 10;
   device.trackpoint_id = 14;

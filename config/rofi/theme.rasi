@@ -1,6 +1,6 @@
 * {
   y-offset: 0;
-  width: 1200;
+  width: 1000;
   items: 5;
   lack: #708090;
   luster: #deeeed;
