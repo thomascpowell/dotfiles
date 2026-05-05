@@ -77,8 +77,7 @@ require("which-key").setup()
 -- blink
 require("luasnip.loaders.from_vscode").lazy_load()
 
-require('blink.cmp').build():wait(60000)
-
+-- require('blink.cmp').build():wait(60000)
 require("blink.cmp").setup({
   completion = {
     menu = { border = "rounded" },
