@@ -13,6 +13,7 @@
     ../../modules/gui.nix
   ];
 
+  programs.zsh.enable = true;
 
   device.trackpad_id = 10;
   device.trackpoint_id = 14;

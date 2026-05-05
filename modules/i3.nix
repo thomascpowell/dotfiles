@@ -26,6 +26,8 @@
     ]
   );
 
+  imports = [ ./rofi.nix ];
+
   home.file.".config/i3/config".source = ../config/i3/config;
   home.file.".config/i3blocks".source = ../config/i3blocks;
   home.file.".config/picom".source = ../config/picom;
