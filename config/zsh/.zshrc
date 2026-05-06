@@ -1,4 +1,5 @@
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+vars="$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+[[ -f $vars ]] && . "$vars"
 fpath+=("$HOME/.nix-profile/share/zsh/site-functions")
 
 function y() {

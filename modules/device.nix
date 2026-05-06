@@ -29,7 +29,6 @@
     default = null;
   };
 
-
   options.keyboard = {
     vol_mute = lib.mkOption {
       type = lib.types.str;
@@ -47,7 +46,6 @@
       type = lib.types.str;
       default = "XF86AudioMicMute";
     };
-
     brightness_down = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       default = null;
@@ -56,7 +54,6 @@
       type = lib.types.nullOr lib.types.str;
       default = null;
     };
-
     screenshot = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       default = null;

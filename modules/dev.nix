@@ -1,11 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 # Toolchains, LSPs, etc.
 
 {
   home.packages = with pkgs; [
     go
-    # (lib.lowPrio rustup)
     cargo
     rustc
     php
