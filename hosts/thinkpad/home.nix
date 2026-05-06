@@ -19,4 +19,8 @@
   device.trackpad_id = 10;
   device.trackpoint_id = 14;
   device.dpi = 144;
+
+  keyboard.brightness_down = "XF86MonBrightnessDown";
+  keyboard.brightness_up = "XF86MonBrightnessUp";
+  keyboard.screenshot = "Print";
 }

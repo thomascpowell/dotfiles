@@ -1,4 +1,5 @@
 include ~/.config/i3/inputs.conf
+include ~/.config/i3/keys.conf
 
 set $mod Mod4
 
@@ -52,14 +53,14 @@ bindsym $mod+a exec ~/.local/bin/accent
 bindsym $mod+e exec ~/.local/bin/emoji
 bindsym $mod+b exec ~/.local/bin/connect_bluetooth $(rofi -dmenu -window)
 
-# laptop buttons
-bindsym XF86MonBrightnessUp exec brightnessctl set +2%
-bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioMicMute exec amixer set Capture toggle
-bindsym Print exec flameshot gui
+# buttons
+# bindsym XF86MonBrightnessUp exec brightnessctl set +2%
+# bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+# bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+# bindsym XF86AudioMute exec amixer set Master toggle
+# bindsym XF86AudioMicMute exec amixer set Capture toggle
+# bindsym Print exec flameshot gui
 
 # workspaces
 set $ws1 "1"
