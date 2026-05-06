@@ -11,6 +11,7 @@
     ../../modules/i3.nix
     ../../modules/dev.nix
     ../../modules/gui.nix
+    ../../modules/fonts.nix
   ];
 
   programs.zsh.enable = true;

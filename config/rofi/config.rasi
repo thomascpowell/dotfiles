@@ -1,8 +1,0 @@
-// Now managed by modules/i3.nix
-
-configuration {
-  modi: "drun,run,window";
-  show-icons: false;
-  dpi: 144;
-}
-@theme "theme"

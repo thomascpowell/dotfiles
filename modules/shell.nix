@@ -27,7 +27,7 @@
   home.file.".config/tmux".source = ../config/tmux;
   home.file.".config/yazi".source = ../config/yazi;
   home.file.".zshrc".source = ../config/zsh/.zshrc;
-  home.file.".config/starship.toml".source = ../config/starship.toml;
+  home.file.".config/starship.toml".source = ../config/starship/starship.toml;
   home.file.".config/fastfetch".source = ../config/fastfetch;
   home.file.".config/nvim/lua".source = ../config/nvim/lua;
   home.file.".config/nvim/init.lua".source = ../config/nvim/init.lua;

@@ -12,20 +12,21 @@
     with pkgs;
     [
       nerd-fonts.jetbrains-mono
+      inter
     ]
   );
+
+  home.file.".local/share/fonts/AppleColorEmoji.ttf".source = ../misc/data/emoji.ttf;
 
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
       serif = [
-        "SF Pro Text"
-        "SF Pro Display"
+        "Inter"
         "Apple Color Emoji"
       ];
       sansSerif = [
-        "SF Pro Text"
-        "SF Pro Display"
+        "Inter"
         "Apple Color Emoji"
       ];
       monospace = [
