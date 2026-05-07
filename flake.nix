@@ -14,7 +14,7 @@
     { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/desktop/default.nix
@@ -29,9 +29,9 @@
       };
 
       homeConfigurations = {
-        thinkpad = home-manager.lib.homeManagerConfiguration {
+        arch = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          modules = [ ./hosts/thinkpad/home.nix ];
+          modules = [ ./hosts/arch/home.nix ];
         };
 
         m2 = home-manager.lib.homeManagerConfiguration {

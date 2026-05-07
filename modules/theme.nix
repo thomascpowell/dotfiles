@@ -27,10 +27,6 @@
 
   home.file.".xprofile".text = "export QT_QPA_PLATFORMTHEME=qt6ct";
 
-
-  # fixed="SF Pro Text,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular,0,0"
-  # general="SF Pro Text,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular,0,0"
-
   home.file.".config/qt6ct/qt6ct.conf".text = ''
     [Appearance]
     color_scheme_path=${../theme/qt6ct/colors/ll.conf}
@@ -65,8 +61,6 @@
     ignored_applications=@Invalid()
   '';
 
-  # fixed="SF Pro Text,10,-1,5,50,0,0,0,0,0"
-  # general="SF Pro Text,10,-1,5,50,0,0,0,0,0"
   home.file.".config/qt5ct/qt5ct.conf".text = ''
     [Appearance]
     color_scheme_path=${../theme/qt5ct/colors/ll.conf}

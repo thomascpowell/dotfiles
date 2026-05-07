@@ -3,7 +3,7 @@
 {
   home.username = "t";
   home.homeDirectory = "/home/t";
-  device.hostname = "thinkpad";
+  device.hostname = "arch";
 
   imports = [
     ../common.nix
@@ -14,8 +14,13 @@
     ../../modules/fonts.nix
   ];
 
-  device.dpi = 144;
-  device.is_nixos = true;
+  programs.zsh.enable = true;
+
   device.trackpad_id = 10;
   device.trackpoint_id = 14;
+  device.dpi = 144;
+
+  keyboard.brightness_down = "XF86MonBrightnessDown";
+  keyboard.brightness_up = "XF86MonBrightnessUp";
+  keyboard.screenshot = "Print";
 }
