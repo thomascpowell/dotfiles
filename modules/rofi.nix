@@ -8,7 +8,7 @@
 # Menu
 
 {
-  home.packages = lib.optionals config.device.is_nixos ([ pkgs.rofi ]);
+  home.packages = lib.optionals config.device.is_nixos [ pkgs.rofi ];
 
   home.file.".config/rofi/theme.rasi".source = ../config/rofi/theme.rasi;
 

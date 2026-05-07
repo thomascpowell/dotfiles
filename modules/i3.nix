@@ -13,7 +13,6 @@
     [
       i3blocks
       picom
-      rofi
       feh
       playerctl
       brightnessctl
