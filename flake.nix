@@ -17,12 +17,12 @@
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./hosts/nixos/default.nix
+            ./hosts/desktop/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.t = import ./hosts/nixos/home.nix;
+              home-manager.users.t = import ./hosts/desktop/home.nix;
             }
           ];
         };
@@ -39,9 +39,9 @@
           modules = [ ./hosts/m2/home.nix ];
         };
 
-        nixos = home-manager.lib.homeManagerConfiguration {
+        desktop = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          modules = [ ./hosts/nixos/home.nix ];
+          modules = [ ./hosts/desktop/home.nix ];
         };
       };
     };

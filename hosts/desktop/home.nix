@@ -3,7 +3,7 @@
 {
   home.username = "t";
   home.homeDirectory = "/home/t";
-  device.hostname = "nixos";
+  device.hostname = "desktop";
 
   imports = [
     ../common.nix
