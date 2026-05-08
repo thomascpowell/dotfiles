@@ -36,6 +36,14 @@
 
   services.displayManager.ly.enable = true;
 
+  services.tlp.enable = true;
+  services.tlp.settings = {
+    RUNTIME_PM_ON_AC = "auto";
+    CPU_ENERGY_PERF_POLICY_ON_AC = "power";
+    PLATFORM_PROFILE_ON_AC = "balanced";
+    CPU_BOOST_ON_AC = "0";
+  };
+
   security.rtkit.enable = true;
 
   hardware.bluetooth = {

@@ -31,8 +31,6 @@
 
   services.displayManager.ly.enable = true;
 
-  services.acpid.enable = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
