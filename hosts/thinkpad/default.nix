@@ -13,13 +13,18 @@
     "flakes"
   ];
 
-  networking.hostName = "desktop";
-  networking.networkmanager.enable = true;
+  networking.hostName = "thinkpad";
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+    wifi.backend = "iwd";
+  };
 
   time.timeZone = "America/New_York";
 
   services.pipewire = {
     enable = true;
+    audio.enable = true;
     alsa.enable = true;
     pulse.enable = true;
   };
@@ -30,6 +35,8 @@
   };
 
   services.displayManager.ly.enable = true;
+
+  security.rtkit.enable = true;
 
   hardware.bluetooth = {
     enable = true;
@@ -47,6 +54,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "video"
     ];
     shell = pkgs.zsh;
   };

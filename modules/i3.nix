@@ -21,6 +21,7 @@
       xdotool
       xinput
       xset
+      xclip
       alsa-utils
     ]
   );

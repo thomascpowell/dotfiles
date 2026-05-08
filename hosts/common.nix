@@ -9,9 +9,9 @@
 
   home.stateVersion = "26.05";
 
-  programs.home-manager.enable = true;
-
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
   ];
+
+  programs.home-manager.enable = true;
 }

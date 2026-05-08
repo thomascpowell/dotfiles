@@ -25,6 +25,18 @@
               home-manager.users.t = import ./hosts/desktop/home.nix;
             }
           ];
+	};
+        thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/thinkpad/default.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.t = import ./hosts/thinkpad/home.nix;
+            }
+          ];
         };
       };
 
@@ -42,6 +54,11 @@
         desktop = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           modules = [ ./hosts/desktop/home.nix ];
+        };
+
+        thinkpad  = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          modules = [ ./hosts/thinkpad/home.nix ];
         };
       };
     };

@@ -18,4 +18,7 @@
   device.is_nixos = true;
   device.trackpad_id = 10;
   device.trackpoint_id = 14;
+
+  keyboard.brightness_down = "XF86MonBrightnessDown";
+  keyboard.brightness_up = "XF86MonBrightnessUp";
 }

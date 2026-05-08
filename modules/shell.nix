@@ -16,6 +16,7 @@
     tree
     zoxide
     ripgrep
+    bash
   ];
 
   home.file.".local/bin" = {
