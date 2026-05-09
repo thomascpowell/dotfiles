@@ -14,18 +14,13 @@
     brightnessctl
   ];
 
-  imports = [
-    ../rofi.nix
-  ];
-
-  xdg.configFile."niri".source = ../../config/niri;
+  xdg.configFile."niri".source = ../../../config/niri;
 
   services.polkit-gnome.enable = true;
   programs.swaylock.enable = true;
 
   gtk = {
     enable = true;
-
     theme = {
       name = "ll";
     };

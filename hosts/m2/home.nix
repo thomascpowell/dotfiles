@@ -5,8 +5,11 @@
   home.homeDirectory = "/Users/t";
   device.hostname = "m2";
 
+  home.stateVersion = "26.05";
+  
   imports = [
-    ../common.nix
+    ../../modules/shell.nix
+    ../../modules/commands.nix
   ];
 
   home.sessionVariables.DOCKER_HOST = "unix:/${config.device.homeDirectory}/.colima/default/docker.sock";

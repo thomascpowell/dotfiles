@@ -5,13 +5,20 @@
   home.homeDirectory = "/home/t";
   device.hostname = "desktop";
 
+  home.stateVersion = "26.05";
+
   imports = [
-    ../common.nix
+    ../../modules/shell.nix
+    ../../modules/commands.nix
+    ../../modules/device.nix
+    ../../modules/keyboard.nix
+
     ../../modules/theme.nix
-    ../../modules/i3.nix
     ../../modules/dev.nix
     ../../modules/gui.nix
     ../../modules/fonts.nix
+
+    ../../modules/wm/i3/home.nix
   ];
 
   device.dpi = 120;

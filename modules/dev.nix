@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-# Toolchains, LSPs, etc.
+# Toolchains, LSPs
 
 {
   home.packages = with pkgs; [

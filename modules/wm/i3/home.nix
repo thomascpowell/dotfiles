@@ -6,7 +6,7 @@
 }:
 
 # WM: i3
-# Supports generic Linux distributions
+# Home manager configurations
 
 {
   home.packages = lib.optionals config.device.is_nixos (
@@ -28,7 +28,7 @@
   );
 
   imports = [
-    ./rofi.nix
+    ../../rofi.nix
   ];
 
   home.file.".config/i3/config".source = ../config/i3/config;

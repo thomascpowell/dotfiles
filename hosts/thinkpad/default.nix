@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/niri/system.nix
+    ../../modules/wm/niri/system.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -29,15 +29,6 @@
     alsa.enable = true;
     pulse.enable = true;
   };
-
-  # services.xserver = {
-  #   enable = true;
-  #   windowManager.i3.enable = true;
-  #   xkb = {
-  #     layout = "us";
-  #     variant = "";
-  #   };
-  # };
 
   services.displayManager.ly.enable = true;
 

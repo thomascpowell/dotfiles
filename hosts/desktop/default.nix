@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/wm/i3/system.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -22,11 +23,6 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
-  };
-
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
   };
 
   services.displayManager.ly.enable = true;
