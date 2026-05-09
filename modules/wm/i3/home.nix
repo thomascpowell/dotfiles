@@ -29,6 +29,7 @@
 
   imports = [
     ../../rofi.nix
+    ./scripts.nix
   ];
 
   home.file.".config/i3/config".source = ../config/i3/config;
