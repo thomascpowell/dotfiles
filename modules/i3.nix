@@ -5,7 +5,8 @@
   ...
 }:
 
-# Window manager
+# WM: i3
+# Supports generic Linux distributions
 
 {
   home.packages = lib.optionals config.device.is_nixos (
@@ -28,7 +29,6 @@
 
   imports = [
     ./rofi.nix
-    ./keyboard.nix
   ];
 
   home.file.".config/i3/config".source = ../config/i3/config;

@@ -8,13 +8,15 @@
   imports = [
     ../common.nix
     ../../modules/theme.nix
-    ../../modules/i3.nix
     ../../modules/dev.nix
     ../../modules/gui.nix
     ../../modules/fonts.nix
+
+    # ../../modules/i3.nix
+    ../../modules/niri/home.nix
   ];
 
-  device.dpi = 144;
+  device.dpi = 96;
   device.is_nixos = true;
   device.trackpad_id = 10;
   device.trackpoint_id = 14;

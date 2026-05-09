@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=ll
+Comment=ll
+
+[X-GNOME-Metatheme]
+GtkTheme=ll
+IconTheme=Adwaita
+CursorTheme=Adwaita

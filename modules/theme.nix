@@ -20,6 +20,7 @@
   home.file.".config/gtk-3.0".source = ../config/gtk-3.0;
   home.file.".config/gtk-4.0".source = ../config/gtk-4.0;
   home.file.".themes/ll".source = ../theme/gtk;
+  home.file.".local/share/themes/ll".source = ../theme/gtk;
 
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";

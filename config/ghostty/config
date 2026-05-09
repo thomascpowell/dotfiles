@@ -22,10 +22,11 @@ palette = 13=#d7007d
 palette = 14=#708090
 palette = 15=#deeeed
 
-background = 000000
-foreground = deeeed
+# background = 000000
+background = 0A0A0A
+foreground = DEEEED
 background-opacity = 0.7
-background-blur = 20
+background-blur = 10
 
 cursor-color = deeeed
 selection-background = 7a7a7a

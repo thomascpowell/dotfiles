@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/niri/system.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -29,10 +30,14 @@
     pulse.enable = true;
   };
 
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   windowManager.i3.enable = true;
+  #   xkb = {
+  #     layout = "us";
+  #     variant = "";
+  #   };
+  # };
 
   services.displayManager.ly.enable = true;
 
@@ -49,11 +54,6 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   users.users.t = {
