@@ -17,8 +17,8 @@
   networking.hostName = "thinkpad";
   networking.networkmanager = {
     enable = true;
-    wifi.powersave = false;
-    wifi.backend = "iwd";
+    # wifi.powersave = false;
+    # wifi.backend = "iwd";
   };
 
   time.timeZone = "America/New_York";

@@ -9,7 +9,7 @@
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
 
-  services.dbus.enable = true;
+  # services.dbus.enable = true;
   services.upower.enable = true;
 
   xdg.portal = {
