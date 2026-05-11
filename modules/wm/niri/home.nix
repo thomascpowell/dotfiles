@@ -15,6 +15,8 @@
   ];
 
   xdg.configFile."niri".source = ../../../config/niri;
+  xdg.configFile."noctalia/colors.json".source = ../../../config/noctalia/colors.json;
+  xdg.configFile."noctalia/settings.json".source = ../../../config/noctalia/settings.json;
 
   services.polkit-gnome.enable = true;
   programs.swaylock.enable = true;
