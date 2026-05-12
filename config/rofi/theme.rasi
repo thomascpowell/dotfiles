@@ -1,6 +1,6 @@
 * {
   y-offset: 0;
-  width: 1000;
+  width: 700;
   items: 5;
   lack: #708090;
   luster: #deeeed;
@@ -22,6 +22,7 @@
 
 * {
   font: "system-ui 18";
+  border-radius: 5px;
   background-color: transparent;
   text-color: @gray9;
   margin: 0px;
@@ -33,6 +34,7 @@ window {
   background-color: @gray2;
   y-offset: @y-offset;
   width: @width;
+  border-radius: 10px;
 }
 
 mainbox {

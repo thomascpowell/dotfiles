@@ -25,7 +25,7 @@
   };
 
   options.device.dpi = lib.mkOption {
-    type = lib.types.nullOr lib.types.int;
-    default = null;
+    type = lib.types.int;
+    default = 96;
   };
 }

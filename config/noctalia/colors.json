@@ -8,8 +8,8 @@
   "mTertiary": "#cccccc",
   "mOnTertiary": "#dddddd",
 
-  "mError": "#d70000",
-  "mOnError": "#d70000",
+  "mError": "#deeeed",
+  "mOnError": "#1b1b1b",
 
   "mSurface": "#080808",
   "mOnSurface": "#deeeed",
