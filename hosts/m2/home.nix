@@ -9,7 +9,7 @@
   
   imports = [
     ../../modules/shell.nix
-    ../../modules/commands.nix
+    ../../modules/helpers.nix
   ];
 
   home.sessionVariables.DOCKER_HOST = "unix:/${config.device.homeDirectory}/.colima/default/docker.sock";

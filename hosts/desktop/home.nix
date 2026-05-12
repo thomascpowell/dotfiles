@@ -9,7 +9,7 @@
 
   imports = [
     ../../modules/shell.nix
-    ../../modules/commands.nix
+    ../../modules/helpers.nix
     ../../modules/device.nix
     ../../modules/keyboard.nix
 
