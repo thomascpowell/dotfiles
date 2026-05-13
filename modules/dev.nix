@@ -12,6 +12,7 @@
     typst
 
     rust-analyzer
+    rustfmt
     pyright
     typescript-language-server
     svelte-language-server

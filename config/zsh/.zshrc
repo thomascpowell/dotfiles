@@ -25,7 +25,6 @@ alias trs='tmux rename-session'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-[[ "$(uname -s)" == "Linux" ]] && alias cb='xclip -selection clipboard'
 [[ "$(uname -s)" == "Linux" ]] && alias open='xdg-open';
 
 eval "$(starship init zsh)"

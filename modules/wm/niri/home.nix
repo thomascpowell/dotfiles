@@ -12,6 +12,9 @@
     wl-clipboard
     noctalia-shell
     brightnessctl
+    playerctl
+
+    (writeShellScriptBin "cb" "wl-copy")
   ];
 
   imports = [ ../../rofi.nix ];
