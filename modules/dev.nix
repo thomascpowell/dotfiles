@@ -29,7 +29,6 @@
 
     github-cli
     gitleaks
-    acpi
     ncdu
     lazygit
     tree-sitter
