@@ -11,13 +11,14 @@
   home.packages = lib.optionals config.device.is_nixos (
     with pkgs;
     [
-      librewolf
       mpv-unwrapped
       zathura
       kitty
       ghostty
     ]
   );
+
+  imports = [ ./librewolf.nix ];
 
   home.file.".config/kitty".source = ../config/kitty;
   home.file.".config/mpv".source = ../config/mpv;

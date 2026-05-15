@@ -33,5 +33,6 @@
     ncdu
     lazygit
     tree-sitter
+    gnumake
   ];
 }
