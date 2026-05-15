@@ -10,6 +10,7 @@
 
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "privacy.resistFingerprinting" = false;
       };
 
       userChrome = builtins.readFile ../misc/firefox/userChrome.css;
