@@ -15,6 +15,7 @@
     playerctl
 
     (writeShellScriptBin "cb" "wl-copy")
+    (writeShellScriptBin "rn" "(ps aux | grep shell | awk '{print $2}' | head -n1 | xargs kill) && noctalia-shell --daemonize")
   ];
 
   imports = [ ../../rofi.nix ];
