@@ -9,7 +9,7 @@ input {
     }
 
     touchpad {
-        tap
+        // tap
         natural-scroll
         accel-speed 1
         accel-profile "flat"
