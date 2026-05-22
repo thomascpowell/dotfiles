@@ -21,6 +21,8 @@
     # wifi.backend = "iwd";
   };
 
+  security.lockKernelModules = true;
+
   time.timeZone = "America/New_York";
 
   services.pipewire = {
