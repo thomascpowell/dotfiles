@@ -116,9 +116,10 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Kitty" { spawn "ghostty"; }
-    Mod+Space hotkey-overlay-title="Menu" { spawn "rofi" "-show" "drun"; }
-    Mod+Escape hotkey-overlay-title="Lock" { spawn "swaylock" "--no-unlock-indicator" "--color" "#000000"; }
+    Mod+Return hotkey-overlay-title="Terminal" { spawn "ghostty"; }
+    Mod+N hotkey-overlay-title="Librewolf" { spawn "librewolf"; }
+    Mod+Space hotkey-overlay-title="Rofi" { spawn "rofi" "-show" "drun"; }
+    Mod+Escape hotkey-overlay-title="Swaylock" { spawn "swaylock" "--no-unlock-indicator" "--color" "#000000"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
