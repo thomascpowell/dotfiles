@@ -17,8 +17,6 @@
   networking.hostName = "thinkpad";
   networking.networkmanager = {
     enable = true;
-    # wifi.powersave = false;
-    # wifi.backend = "iwd";
   };
 
   security.lockKernelModules = true;
