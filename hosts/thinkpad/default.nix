@@ -19,8 +19,6 @@
     enable = true;
   };
 
-  security.lockKernelModules = true;
-
   time.timeZone = "America/New_York";
 
   services.pipewire = {
