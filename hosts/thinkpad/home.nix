@@ -18,7 +18,6 @@
     ../../modules/fonts.nix
 
     ../../modules/wm/niri/home.nix
-    ../../modules/pass.nix
   ];
 
   device.is_nixos = true;
