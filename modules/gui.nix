@@ -16,6 +16,7 @@
       kitty
       ghostty
       keepassxc
+      ungoogled-chromium
     ]
   );
 
