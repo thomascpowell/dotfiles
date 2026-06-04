@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/wm/niri/system.nix
+    ../../modules/docker.nix
   ];
 
   networking.extraHosts = builtins.readFile /home/t/extra_hosts;
