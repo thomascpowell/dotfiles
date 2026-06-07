@@ -1,0 +1,38 @@
+{ pkgs, ... }:
+
+{
+
+  home.packages = with pkgs; [ git ];
+
+  xdg.configFile."git/config".text = ''
+    [user]
+      name = Thomas
+      email = 43977109+thomascpowell@users.noreply.github.com
+
+    [core]
+      editor = nvim
+      autocrlf = input
+      excludesfile = ~/.gitignore_global
+
+    [color]
+      ui = auto
+
+    [commit]
+      verbose = true
+
+    [credential "https://github.com"]
+      helper = 
+      helper =  !gh auth git-credential
+
+    [credential "https://gist.github.com"]
+      helper = 
+      helper = !gh auth git-credential
+  '';
+
+  home.file.".gitignore_global".text = ''
+    .DS_Store
+    .env
+    .codex
+    *.log
+  '';
+}
