@@ -43,6 +43,8 @@
 
   security.rtkit.enable = true;
 
+  networking.firewall.enable = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -67,7 +69,6 @@
     curl
     bash
     gcc
-    usbutils
   ];
 
   system.stateVersion = "26.05";
