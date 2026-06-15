@@ -6,6 +6,7 @@ input {
           layout "us"
           options "ctrl:nocaps"
         }
+        repeat-rate 40
     }
 
     touchpad {
@@ -18,7 +19,7 @@ input {
     }
 
     mouse {
-        accel-speed 0.8
+        accel-speed 1
         accel-profile "flat"
     }
 
