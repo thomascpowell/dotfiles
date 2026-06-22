@@ -3,7 +3,6 @@
 {
   home.username = "t";
   home.homeDirectory = "/home/t";
-  device.hostname = "thinkpad";
 
   home.stateVersion = "26.05";
 
@@ -18,7 +17,14 @@
     ../../modules/fonts.nix
 
     ../../modules/wm/niri/home.nix
+    ../../modules/wm/i3/home.nix
+
+    ../../modules/keyboard.nix
   ];
 
+  device.hostname = "thinkpad";
   device.is_nixos = true;
+  device.dpi = 120;
+  device.trackpad_id = 10;
+  device.trackpoint_id = 14;
 }

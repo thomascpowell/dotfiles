@@ -9,7 +9,13 @@
       "steam-unwrapped"
     ];
 
-  programs.steam = {
-    enable = true;
-  };
+  nixpkgs.overlays = [
+    (final: prev: {
+      steam = prev.steam.override {
+        extraArgs = "-system-composer";
+      };
+    })
+  ];
+
+  programs.steam.enable = true;
 }

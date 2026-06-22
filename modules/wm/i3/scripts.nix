@@ -35,7 +35,7 @@
       echo "OK ($OUTPUT $DIRECTION $PRIMARY)"
     '')
 
-    (writeShellScriptBin "connect_monitor" ''
+    (writeShellScriptBin "connect_wifi" ''
       #!/bin/sh
       nmcli device wifi connect "$1" --ask
     '')
