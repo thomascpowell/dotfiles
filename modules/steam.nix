@@ -1,5 +1,7 @@
 { lib, ... }:
 
+# Steam
+
 {
   nixpkgs.config.allowUnfreePredicate =
     pkg:

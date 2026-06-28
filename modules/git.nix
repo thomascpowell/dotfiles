@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+# Git configuration and global ignore
+
 {
 
   home.packages = with pkgs; [ git ];

@@ -4,6 +4,7 @@
 }:
 
 # WM: Niri
+# NixOS configurations
 
 {
   programs.niri.enable = true;

@@ -4,6 +4,7 @@
 }:
 
 # WM: Niri
+# Home manager configurations
 
 {
   home.packages = with pkgs; [

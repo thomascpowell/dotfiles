@@ -5,7 +5,7 @@
   ...
 }:
 
-# Fonts
+# Font configuration
 
 {
   home.packages = lib.optionals config.device.is_nixos (

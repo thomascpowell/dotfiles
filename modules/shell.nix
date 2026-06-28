@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-# CLI tools
+# General CLI tools
 
 {
   home.packages = with pkgs; [

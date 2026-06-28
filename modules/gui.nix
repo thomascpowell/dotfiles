@@ -5,7 +5,7 @@
   ...
 }:
 
-# GUI applications
+# General GUI applications
 
 {
   home.packages = lib.optionals config.device.is_nixos (
