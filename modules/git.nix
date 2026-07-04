@@ -11,6 +11,9 @@
       name = Thomas
       email = 43977109+thomascpowell@users.noreply.github.com
 
+    [init]
+        defaultBranch = main
+
     [core]
       editor = nvim
       autocrlf = input
