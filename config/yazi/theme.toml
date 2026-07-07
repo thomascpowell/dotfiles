@@ -16,7 +16,7 @@ padding = { open = "█", close = "█" }
 
 [filetype]
 rules = [
-	{ name = "*/*", fg = "white" }
+	{ name = "*/*", url = "*/*", fg = "white" }
 ]
 
 [icon]
