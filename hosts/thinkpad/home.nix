@@ -17,7 +17,6 @@
     ../../modules/fonts.nix
 
     ../../modules/wm/niri/home.nix
-    ../../modules/wm/i3/home.nix
 
     ../../modules/keyboard.nix
   ];

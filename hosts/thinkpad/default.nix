@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
 
     ../../modules/wm/niri/system.nix
-    ../../modules/wm/i3/system.nix
 
     # ../../modules/docker.nix
     ../../modules/steam.nix
@@ -72,6 +71,7 @@
     vim
     curl
     bash
+    gcc
   ];
 
   system.stateVersion = "26.05";

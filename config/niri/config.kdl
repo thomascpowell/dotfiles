@@ -98,7 +98,7 @@ screenshot-path "~/Downloads"
 
 animations {
     // off
-    slowdown 0.5
+    slowdown 0.25
 }
 
 window-rule {
