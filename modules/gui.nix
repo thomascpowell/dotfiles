@@ -37,7 +37,7 @@
         "privacy.resistFingerprinting" = false;
       };
 
-      userChrome = builtins.readFile ../misc/firefox/userChrome.css;
+      userChrome = builtins.readFile ../config/firefox/userChrome.css;
     };
   };
 }
