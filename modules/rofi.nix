@@ -32,12 +32,10 @@
     '')
   ];
 
-  home.file.".config/rofi/theme.rasi".source = ../config/rofi/theme.rasi;
-
   home.file.".config/rofi/theme.rasi".text = ''
     * {
       y-offset: 0;
-      width: ${toString (config.device.dpi * 8)};
+      width: ${toString (config.device.dpi * 6)};
       items: 5;
       lack: #708090;
       luster: #deeeed;
