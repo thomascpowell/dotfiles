@@ -15,6 +15,9 @@
     brightnessctl
     playerctl
 
+    slurp
+    grim
+    (writeShellScriptBin "screenshot" "grim - | wl-copy")
     (writeShellScriptBin "cb" "wl-copy")
     (writeShellScriptBin "rn" "(ps aux | grep quickshell | awk '{print $2}' | head -n1 | xargs kill) && noctalia-shell --daemonize")
   ];
