@@ -35,7 +35,7 @@
   home.file.".config/i3/config".source = ../../../config/i3/config;
   home.file.".config/i3blocks".source = ../../../config/i3blocks;
   home.file.".config/picom".source = ../../../config/picom;
-  home.file.".config/i3/wallpaper.jpg".source = ../../../misc/wall/mountain.jpg;
+  home.file.".config/i3/wallpaper.jpg".source = ../../../config/wall/mountain.jpg;
 
   home.file.".config/i3/inputs.conf".text =
     if config.device.trackpad_id != null && config.device.trackpoint_id != null then

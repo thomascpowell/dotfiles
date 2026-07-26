@@ -147,7 +147,7 @@
     "screenOverrides": []
   },
   "general": {
-    "avatarImage": "/home/t/dotfiles/misc/wall/black.png",
+    "avatarImage": "/home/t/dotfiles/config/wall/black.png",
     "dimmerOpacity": 0.2,
     "showScreenCorners": false,
     "forceBlackScreenCorners": false,
@@ -259,7 +259,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": false,
-    "directory": "/home/t/dotfiles/misc/wall",
+    "directory": "/home/t/dotfiles/config/wall",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,

@@ -13,7 +13,7 @@
     (writeShellScriptBin "emoji" ''
       #!/bin/sh
 
-      tail -n +3 ~/dotfiles/misc/data/emoji_list | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
+      tail -n +3 ~/dotfiles/config/data/emoji_list | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
     '')
 
     (writeShellScriptBin "accent" ''

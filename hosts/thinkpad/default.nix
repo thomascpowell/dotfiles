@@ -3,10 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-
     ../../modules/wm/niri/system.nix
-
-    # ../../modules/docker.nix
     ../../modules/steam.nix
   ];
 
