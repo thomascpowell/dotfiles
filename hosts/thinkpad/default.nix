@@ -4,10 +4,9 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/wm/niri/system.nix
-    ../../modules/steam.nix
   ];
 
-  networking.extraHosts = builtins.readFile /home/t/extra_hosts;
+  # networking.extraHosts = builtins.readFile /home/t/extra_hosts;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
