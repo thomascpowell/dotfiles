@@ -16,6 +16,8 @@
     zoxide
     ripgrep
     bash
+    zip
+    unzip
   ];
 
   imports = [ ./git.nix ];

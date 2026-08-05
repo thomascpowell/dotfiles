@@ -4,9 +4,9 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/wm/niri/system.nix
-  ];
 
-  # networking.extraHosts = builtins.readFile /home/t/extra_hosts;
+    ../../modules/docker.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -42,6 +42,7 @@
 
   security.rtkit.enable = true;
 
+  services.mullvad-vpn.enable = true;
   networking.firewall.enable = true;
 
   hardware.bluetooth = {

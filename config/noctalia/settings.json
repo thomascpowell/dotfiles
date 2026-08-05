@@ -2,16 +2,16 @@
   "settingsVersion": 59,
   "bar": {
     "barType": "simple",
-    "position": "left",
+    "position": "top",
     "monitors": [],
     "density": "comfortable",
     "showOutline": false,
     "showCapsule": false,
     "capsuleOpacity": 0,
-    "capsuleColorKey": "none",
-    "widgetSpacing": 10,
+    "capsuleColorKey": "error",
+    "widgetSpacing": 6,
     "contentPadding": 2,
-    "fontScale": 1.2000000000000002,
+    "fontScale": 1.1,
     "enableExclusionZoneInset": false,
     "backgroundOpacity": 0.7000000000000001,
     "useSeparateOpacity": true,
@@ -19,25 +19,14 @@
     "marginHorizontal": 4,
     "frameThickness": 8,
     "frameRadius": 12,
-    "outerCorners": true,
-    "hideOnOverview": false,
+    "outerCorners": false,
+    "hideOnOverview": true,
     "displayMode": "always_visible",
     "autoHideDelay": 500,
     "autoShowDelay": 150,
     "showOnWorkspaceSwitch": true,
     "widgets": {
       "left": [
-        {
-          "clockColor": "none",
-          "customFont": "",
-          "formatHorizontal": "h:mm ap",
-          "formatVertical": "hh mm ap",
-          "id": "Clock",
-          "tooltipFormat": "",
-          "useCustomFont": false
-        }
-      ],
-      "center": [
         {
           "characterCount": 2,
           "colorizeIcons": false,
@@ -47,7 +36,7 @@
           "followFocusedScreen": false,
           "fontWeight": "bold",
           "groupedBorderOpacity": 1,
-          "hideUnoccupied": false,
+          "hideUnoccupied": true,
           "iconScale": 0.8,
           "id": "Workspace",
           "labelMode": "none",
@@ -55,12 +44,38 @@
           "pillSize": 0.4,
           "showApplications": false,
           "showApplicationsHover": false,
-          "showBadge": true,
+          "showBadge": false,
           "showLabelsOnlyWhenOccupied": false,
           "unfocusedIconsOpacity": 1
         }
       ],
+      "center": [],
       "right": [
+        {
+          "deviceNativePath": "__default__",
+          "displayMode": "graphic",
+          "hideIfIdle": false,
+          "hideIfNotDetected": true,
+          "id": "Battery",
+          "showNoctaliaPerformance": false,
+          "showPowerProfiles": false
+        },
+        {
+          "displayMode": "alwaysHide",
+          "iconColor": "none",
+          "id": "Volume",
+          "middleClickCommand": "pwvucontrol || pavucontrol",
+          "textColor": "none"
+        },
+        {
+          "blacklist": [],
+          "chevronColor": "none",
+          "colorizeIcons": false,
+          "drawerEnabled": true,
+          "hidePassive": false,
+          "id": "Tray",
+          "pinned": []
+        },
         {
           "colorizeDistroLogo": false,
           "colorizeSystemIcon": "primary",
@@ -72,36 +87,13 @@
           "useDistroLogo": false
         },
         {
-          "displayMode": "alwaysHide",
-          "iconColor": "none",
-          "id": "Volume",
-          "middleClickCommand": "pwvucontrol || pavucontrol",
-          "textColor": "none"
-        },
-        {
-          "applyToAllMonitors": false,
-          "displayMode": "alwaysHide",
-          "iconColor": "none",
-          "id": "Brightness",
-          "textColor": "none"
-        },
-        {
-          "deviceNativePath": "__default__",
-          "displayMode": "icon-hover",
-          "hideIfIdle": false,
-          "hideIfNotDetected": true,
-          "id": "Battery",
-          "showNoctaliaPerformance": false,
-          "showPowerProfiles": false
-        },
-        {
-          "blacklist": [],
-          "chevronColor": "none",
-          "colorizeIcons": false,
-          "drawerEnabled": true,
-          "hidePassive": false,
-          "id": "Tray",
-          "pinned": []
+          "clockColor": "none",
+          "customFont": "Inter",
+          "formatHorizontal": "h:mm ap",
+          "formatVertical": "hh mm ap",
+          "id": "Clock",
+          "tooltipFormat": "",
+          "useCustomFont": false
         }
       ]
     },
