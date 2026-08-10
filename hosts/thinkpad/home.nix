@@ -7,6 +7,8 @@
   home.stateVersion = "26.05";
 
   imports = [
+    ../../modules/xdg.nix
+
     ../../modules/shell.nix
     ../../modules/helpers.nix
     ../../modules/device.nix

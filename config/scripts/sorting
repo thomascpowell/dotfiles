@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+# script for sorting files
+
+set -euo pipefail
+
+target="$(realpath -m "$1")"
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 TARGET_DIR"
+    exit 1
+fi
+
+get_subdirs() {
+    mapfile -t subdirs < <(
+        find "$target" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' |
+        sort
+    )
+}
+
+get_subdirs
+
+shopt -s nullglob
+files=( * )
+
+for file in "${files[@]}"; do
+    [[ -f "$file" ]] || continue
+
+    echo
+    echo "File: $file"
+    echo
+
+    while true; do
+        get_subdirs
+
+        if ((${#subdirs[@]})); then
+            echo "destination directories:"
+            for i in "${!subdirs[@]}"; do
+                printf "  %d) %s\n" "$((i + 1))" "${subdirs[$i]}"
+            done
+        else
+            echo "no subdirectories exist yet"
+        fi
+
+        echo " o) open file"
+        echo "  n) new directory"
+        echo "  s) skip this file"
+        
+        echo
+
+        read -rp "move '$file' to: " choice
+
+        # open file
+        if [[ "$choice" =~ ^[Pp]$ ]]; then
+            xdg-open "$file" >/dev/null 2>&1 &
+            continue
+        fi
+
+        # skip
+        if [[ "$choice" =~ ^[Ss]$ ]]; then
+            echo "Skipped: $file"
+            break
+        fi
+
+        # create a new directory
+        if [[ "$choice" =~ ^[Nn]$ ]]; then
+            read -rp "new directory name: " new_dir
+
+            dest="$target/$new_dir"
+
+            if [[ -e "$dest" ]]; then
+                if [[ ! -d "$dest" ]]; then
+                    echo "'$dest' exists but is not a directory."
+                    continue
+                fi
+
+                echo "directory already exists: $dest"
+            else
+                mkdir -p "$dest"
+                echo "created: $dest"
+            fi
+
+            mv -- "$file" "$dest/"
+            echo "moved '$file' -> '$dest/'"
+            break
+        fi
+
+        # existing directory
+        if [[ "$choice" =~ ^[0-9]+$ ]] &&
+           ((choice >= 1 && choice <= ${#subdirs[@]})); then
+
+            dest="${target}/${subdirs[$((choice - 1))]}"
+
+            mv -- "$file" "$dest/"
+            echo "moved '$file' -> '$dest/'"
+            break
+        fi
+
+        echo "invalid choice"
+    done
+done
