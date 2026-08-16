@@ -4,7 +4,7 @@
   ...
 }:
 
-# Menu
+# Rofi and related scripts
 
 {
   home.packages = with pkgs; [

@@ -15,14 +15,14 @@
     brightnessctl
     playerctl
 
-    slurp
-    grim
-    (writeShellScriptBin "screenshot" "grim - | wl-copy")
     (writeShellScriptBin "cb" "wl-copy")
     (writeShellScriptBin "rn" "(ps aux | grep quickshell | awk '{print $2}' | head -n1 | xargs kill) && noctalia-shell --daemonize")
   ];
 
-  imports = [ ../../rofi.nix ];
+  imports = [
+    ../../rofi.nix
+    ../../grim.nix
+  ];
 
   xdg.configFile."niri".source = ../../../config/niri;
   xdg.configFile."noctalia/colors.json".source = ../../../config/noctalia/colors.json;
