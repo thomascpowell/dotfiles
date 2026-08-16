@@ -198,9 +198,7 @@ binds {
 
     Mod+W { toggle-column-tabbed-display; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print { spawn "screenshot"; }
 
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
