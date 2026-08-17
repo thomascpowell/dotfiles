@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 # Extra device-specific information
 
@@ -11,6 +11,11 @@
 
   options.device.hostname = lib.mkOption {
     type = lib.types.str;
+  };
+
+  options.device.dotfiles_path = lib.mkOption {
+    type = lib.types.str;
+    default = "${config.home.homeDirectory}/dotfiles";
   };
 
   options.device = {
