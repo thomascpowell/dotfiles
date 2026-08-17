@@ -16,7 +16,7 @@ for_window [window_type="utility"] border none
 bar {
   status_command i3blocks
   position top
-  font pango: JetBrainsMono Nerd Font Mono 12
+  font pango: JetBrainsMono Nerd Font Mono 14
   i3bar_command i3bar --transparency
   colors {
     statusline #555555
@@ -86,6 +86,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+# move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
 
 # resize
 bindsym $mod+minus resize shrink width 50 px

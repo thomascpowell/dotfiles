@@ -26,7 +26,7 @@
 
   device.hostname = "thinkpad";
   device.is_nixos = true;
-  device.dpi = 120;
+  device.dpi = 100;
   device.trackpad_id = 10;
   device.trackpoint_id = 14;
 
