@@ -9,10 +9,10 @@
     defaultApplications = {
       "application/pdf" = [ "org.pwmt.zathura.desktop" ];
 
-      "image/jpeg" = [ "mpv.desktop" ];
-      "image/png" = [ "mpv.desktop" ];
-      "image/webp" = [ "mpv.desktop" ];
-      "image/gif" = [ "mpv.desktop" ];
+      "image/jpeg" = [ "imv.desktop" ];
+      "image/png" = [ "imv.desktop" ];
+      "image/webp" = [ "imv.desktop" ];
+      "image/gif" = [ "imv.desktop" ];
 
       "video/mp4" = [ "mpv.desktop" ];
       "video/webm" = [ "mpv.desktop" ];

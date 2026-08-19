@@ -3,7 +3,6 @@
 # Extra device-specific information
 
 {
-
   options.device.is_nixos = lib.mkOption {
     type = lib.types.bool;
     default = false;
