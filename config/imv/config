@@ -1,0 +1,4 @@
+[binds]
+<Shift+J> = zoom -1
+<Shift+K> = zoom 1
+<r> = rotate by 90

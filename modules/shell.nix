@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     tmux
     yazi
-    imv
     neovim
     starship
     fastfetch
