@@ -34,9 +34,10 @@
   '';
 
   home.file.".gitignore_global".text = ''
+    .codex
+    .agents
     .DS_Store
     .env
-    .codex
     *.log
   '';
 }
