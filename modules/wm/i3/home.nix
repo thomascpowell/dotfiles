@@ -33,7 +33,7 @@
   ];
 
   home.file.".config/i3/config".source = ../../../config/i3/config;
-  home.file.".config/i3blocks/scripts".source = ../../../config/i3blocks/scripts;
+  home.file.".config/i3blocks/scripts".source = ../../../config/i3blocks;
   home.file.".config/i3blocks/config".text =
     let
       scripts = "${config.home.homeDirectory}/.config/i3blocks/scripts";
