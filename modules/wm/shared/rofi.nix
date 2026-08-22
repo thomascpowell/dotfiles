@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -13,13 +14,13 @@
     (writeShellScriptBin "emoji" ''
       #!/bin/sh
 
-      tail -n +3 ~/dotfiles/config/data/emoji_list | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
+      tail -n +3 ${lib.escapeShellArg "${config.device.dotfiles_path}/config/data/emoji_list"} | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
     '')
 
     (writeShellScriptBin "accent" ''
       #!/bin/sh
 
-      accent= printf '%s' "$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2)" | awk -F';' '{print $1 " " $2}' | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
+      printf '%s' "$(sed -n '/^__DATA__$/,$p' "$0" | tail -n +2)" | awk -F';' '{print $1 " " $2}' | rofi -case-smart -sorting-method fzf -dmenu | awk '{print $1}' | tr -d '\n' | cb
       exit;
 
       __DATA__

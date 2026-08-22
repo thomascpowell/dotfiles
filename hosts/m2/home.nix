@@ -12,9 +12,6 @@
   ];
 
   programs.home-manager.enable = true;
-
   home.sessionVariables.DOCKER_HOST = "unix:/${config.home.homeDirectory}/.colima/default/docker.sock";
-
-  home.file.".config/ghostty".source = ../../config/ghostty;
   home.file.".config/aerospace".source = ../../config/aerospace;
 }
