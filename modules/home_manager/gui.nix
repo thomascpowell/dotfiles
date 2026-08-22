@@ -23,12 +23,12 @@
     ]
   );
 
-  home.file.".config/ghostty".source = ../config/ghostty;
-  home.file.".config/kitty".source = ../config/kitty;
+  home.file.".config/ghostty".source = ../../config/ghostty;
+  home.file.".config/kitty".source = ../../config/kitty;
 
-  home.file.".config/mpv".source = ../config/mpv;
-  home.file.".config/imv".source = ../config/imv;
-  home.file.".config/zathura".source = ../config/zathura;
+  home.file.".config/mpv".source = ../../config/mpv;
+  home.file.".config/imv".source = ../../config/imv;
+  home.file.".config/zathura".source = ../../config/zathura;
 
   programs.librewolf = {
     enable = true;
@@ -42,7 +42,7 @@
         "privacy.resistFingerprinting" = false;
       };
 
-      userChrome = builtins.readFile ../config/firefox/userChrome.css;
+      userChrome = builtins.readFile ../../config/firefox/userChrome.css;
     };
   };
 }

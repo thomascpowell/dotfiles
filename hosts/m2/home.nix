@@ -6,13 +6,9 @@
   device.hostname = "m2";
 
   home.stateVersion = "26.05";
-  
+
   imports = [
-    ../../modules/device.nix
-    ../../modules/shell.nix
-    ../../modules/dev.nix
-    ../../modules/helpers.nix
-    ../../modules/gui.nix
+    ../../modules/home_manager
   ];
 
   programs.home-manager.enable = true;

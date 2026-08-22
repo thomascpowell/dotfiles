@@ -20,8 +20,8 @@
   ];
 
   imports = [
-    ../../rofi.nix
-    ../../grim.nix
+    ../shared/rofi.nix
+    ../shared/grim.nix
   ];
 
   xdg.configFile."niri".source = ../../../config/niri;

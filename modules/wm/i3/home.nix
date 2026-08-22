@@ -28,7 +28,7 @@
   );
 
   imports = [
-    ../../rofi.nix
+    ../shared/rofi.nix
     ./scripts.nix
   ];
 

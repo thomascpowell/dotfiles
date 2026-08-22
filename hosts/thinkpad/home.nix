@@ -7,21 +7,10 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../modules/xdg.nix
-
-    ../../modules/shell.nix
-    ../../modules/helpers.nix
-    ../../modules/device.nix
-
-    ../../modules/theme.nix
-    ../../modules/dev.nix
-    ../../modules/gui.nix
-    ../../modules/fonts.nix
-
+    ../../modules/home_manager
+    ../../modules/home_manager/linux_desktop.nix
     ../../modules/wm/niri/home.nix
     ../../modules/wm/i3/home.nix
-
-    ../../modules/keyboard.nix
   ];
 
   device.hostname = "thinkpad";

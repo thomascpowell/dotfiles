@@ -17,10 +17,10 @@
     ]
   );
 
-  home.file.".config/gtk-3.0".source = ../config/gtk-3.0;
-  home.file.".config/gtk-4.0".source = ../config/gtk-4.0;
-  home.file.".themes/ll".source = ../config/theme/gtk;
-  home.file.".local/share/themes/ll".source = ../config/theme/gtk;
+  home.file.".config/gtk-3.0".source = ../../config/gtk-3.0;
+  home.file.".config/gtk-4.0".source = ../../config/gtk-4.0;
+  home.file.".themes/ll".source = ../../config/theme/gtk;
+  home.file.".local/share/themes/ll".source = ../../config/theme/gtk;
 
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -30,7 +30,7 @@
 
   home.file.".config/qt6ct/qt6ct.conf".text = ''
     [Appearance]
-    color_scheme_path=${../config/theme/qt6ct/colors/ll.conf}
+    color_scheme_path=${../../config/theme/qt6ct/colors/ll.conf}
     custom_palette=true
     standard_dialogs=default
     style=Fusion
@@ -64,7 +64,7 @@
 
   home.file.".config/qt5ct/qt5ct.conf".text = ''
     [Appearance]
-    color_scheme_path=${../config/theme/qt5ct/colors/ll.conf}
+    color_scheme_path=${../../config/theme/qt5ct/colors/ll.conf}
     custom_palette=true
     standard_dialogs=gtk3
     style=Fusion

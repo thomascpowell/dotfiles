@@ -1,6 +1,6 @@
 { lib, config, ... }:
 
-# Extra device-specific information
+# Extra device information
 
 {
   options.device.is_nixos = lib.mkOption {

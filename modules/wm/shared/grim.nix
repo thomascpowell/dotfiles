@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-# Grim setup
+# Screenshot workflow
 
 {
   home.packages = with pkgs; [

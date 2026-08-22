@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ../../modules/wm/niri/system.nix
     ../../modules/wm/i3/system.nix
-    # ../../modules/docker.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
