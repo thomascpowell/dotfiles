@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos/docker.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

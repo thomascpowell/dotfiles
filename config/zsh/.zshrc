@@ -12,6 +12,7 @@ function y() {
 
 export EDITOR='nvim'
 export PAGER='less'
+export TERM='xterm-256color'
 
 autoload -U compinit
 zstyle ':completion:*' menu select
