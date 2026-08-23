@@ -16,9 +16,11 @@
   ];
 
   networking.hostName = "thinkpad";
-  networking.networkmanager = {
-    enable = true;
-  };
+  networking.networkmanager.enable = true;
+  security.rtkit.enable = true;
+  services.mullvad-vpn.enable = true;
+  networking.firewall.enable = true;
+  services.tailscale.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -39,10 +41,6 @@
     CPU_BOOST_ON_AC = "0";
   };
 
-  security.rtkit.enable = true;
-
-  services.mullvad-vpn.enable = true;
-  networking.firewall.enable = true;
 
   hardware.bluetooth = {
     enable = true;

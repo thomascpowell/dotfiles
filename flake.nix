@@ -14,6 +14,19 @@
     { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
+        box = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/box/default.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.t = import ./hosts/box/home.nix;
+            }
+          ];
+        };
+
         thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
