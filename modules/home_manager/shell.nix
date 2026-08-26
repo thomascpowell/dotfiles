@@ -31,6 +31,7 @@
     php
     nodejs_24
     typst
+    websocat
 
     rust-analyzer
     rustfmt
