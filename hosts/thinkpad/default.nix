@@ -16,11 +16,22 @@
   ];
 
   networking.hostName = "thinkpad";
-  networking.networkmanager.enable = true;
-  security.rtkit.enable = true;
-  services.mullvad-vpn.enable = true;
   networking.firewall.enable = true;
+  networking.networkmanager.enable = true;
+
+  services.displayManager.ly.enable = true;
+
+  programs.zsh.enable = true;
+
+  security.rtkit.enable = true;
+
+  services.mullvad-vpn.enable = true;
   services.tailscale.enable = true;
+
+  services.fprintd.enable = true;
+  security.pam.services.ly.fprintAuth = false;
+  security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.swaylock.fprintAuth = true;
 
   time.timeZone = "America/New_York";
 
@@ -31,8 +42,6 @@
     pulse.enable = true;
   };
 
-  services.displayManager.ly.enable = true;
-
   services.tlp.enable = true;
   services.tlp.settings = {
     RUNTIME_PM_ON_AC = "auto";
@@ -40,7 +49,6 @@
     PLATFORM_PROFILE_ON_AC = "balanced";
     CPU_BOOST_ON_AC = "0";
   };
-
 
   hardware.bluetooth = {
     enable = true;
@@ -57,8 +65,6 @@
     ];
     shell = pkgs.zsh;
   };
-
-  programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
     git
