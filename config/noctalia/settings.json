@@ -221,7 +221,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": false,
-    "directory": "/home/t/Pictures/Wallpapers",
+    "directory": "/home/t/dotfiles/config/wall",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,

@@ -70,11 +70,13 @@ layout {
   }
 
   border {
-      off
-      // width 4
-      // active-color "#ffc87f"
-      // inactive-color "#505050"
-      // urgent-color "#9b0000"
+      on
+      width 1
+      active-color "#444444"
+      inactive-color "#444444"
+      urgent-color "#444444"
+      // inactive-color "#191919"
+      // urgent-color "#D70000"
   }
 
   // You can enable drop shadows for windows.
