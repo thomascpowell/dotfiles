@@ -8,10 +8,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      ...
+    }:
     {
       nixosConfigurations = {
         box = nixpkgs.lib.nixosSystem {
@@ -31,6 +41,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/thinkpad/default.nix
+            nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
