@@ -24,6 +24,7 @@
     lazygit
     tree-sitter
     gnumake
+    jq
 
     go
     cargo

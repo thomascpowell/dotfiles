@@ -123,6 +123,7 @@ binds {
     Mod+N hotkey-overlay-title="Librewolf" { spawn "librewolf"; }
     Mod+Space hotkey-overlay-title="Rofi" { spawn "rofi" "-show" "drun"; }
     Mod+Escape hotkey-overlay-title="Swaylock" { spawn "swaylock" "--no-unlock-indicator" "--color" "#000000"; }
+    Mod+M hotkey-overlay-title="Display" { spawn "niri_manage_output"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
