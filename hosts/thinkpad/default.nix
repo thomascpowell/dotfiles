@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos/printing.nix
     ../../modules/wm/niri/system.nix
     ../../modules/wm/i3/system.nix
   ];

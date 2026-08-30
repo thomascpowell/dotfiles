@@ -1,6 +1,6 @@
 { lib, ... }:
 
-# Docker configuration
+# Docker
 
 {
   virtualisation.docker.enable = true;
