@@ -8,7 +8,8 @@
 
   imports = [
     ../../modules/home-manager/device.nix
-    ../../modules/home-manager/shell.nix
+    ../../modules/home-manager/cli.nix
+    ../../modules/home-manager/languages.nix
     ../../modules/home-manager/helpers.nix
   ];
 

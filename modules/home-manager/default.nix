@@ -3,7 +3,8 @@
 {
   imports = [
     ./device.nix
-    ./shell.nix
+    ./cli.nix
+    ./languages.nix
     ./helpers.nix
     ./gui.nix
   ];

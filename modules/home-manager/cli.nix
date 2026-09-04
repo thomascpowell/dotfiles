@@ -25,30 +25,6 @@
     tree-sitter
     gnumake
     jq
-
-    go
-    cargo
-    rustc
-    php
-    nodejs_24
-    typst
-    websocat
-
-    rust-analyzer
-    rustfmt
-    pyright
-    typescript-language-server
-    svelte-language-server
-    vscode-langservers-extracted
-    emmet-ls
-    gopls
-    lua-language-server
-    clang-tools
-    phpactor
-    bash-language-server
-    tinymist
-    nixd
-    nixfmt
   ];
 
   imports = [ ./git.nix ];
