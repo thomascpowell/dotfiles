@@ -7,9 +7,9 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../modules/home_manager/device.nix
-    ../../modules/home_manager/shell.nix
-    ../../modules/home_manager/helpers.nix
+    ../../modules/home-manager/device.nix
+    ../../modules/home-manager/shell.nix
+    ../../modules/home-manager/helpers.nix
   ];
 
   device.hostname = "box";

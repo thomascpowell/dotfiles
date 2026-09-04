@@ -7,8 +7,8 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../modules/home_manager
-    ../../modules/home_manager/linux_desktop.nix
+    ../../modules/home-manager
+    ../../modules/home-manager/linux-desktop.nix
     ../../modules/wm/niri/home.nix
     ../../modules/wm/i3/home.nix
   ];

@@ -8,7 +8,7 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../modules/home_manager
+    ../../modules/home-manager
   ];
 
   programs.home-manager.enable = true;
