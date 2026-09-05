@@ -9,6 +9,7 @@
   imports = [
     ../../modules/home-manager
     ../../modules/home-manager/linux-desktop.nix
+    ../../modules/home-manager/slop.nix
     ../../modules/wm/niri/home.nix
     ../../modules/wm/i3/home.nix
   ];
