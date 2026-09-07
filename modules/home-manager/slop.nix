@@ -55,9 +55,7 @@ let
       cleanup() {
         agent_attention clear
       }
-
       trap cleanup EXIT
-
       ${lib.getExe pkgs.codex} "$@"
     '';
   };
@@ -74,12 +72,16 @@ in
 
     hooks = {
       SessionStart = hook "clear";
-      SessionEnd = hook "clear";
+
       UserPromptSubmit = hook "clear";
 
       PermissionRequest = hook "set";
+      PreToolUse = hook "set";
+      PostToolUse = hook "clear";
+
       Stop = hook "set";
-      Interrupt = hook "set";
+      Interrupt = hook "clear";
+      SessionEnd = hook "clear";
     };
   };
 }
