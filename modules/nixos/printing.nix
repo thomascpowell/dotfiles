@@ -3,7 +3,10 @@
 # Printing
 
 {
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    browsed.enable = true;
+  };
 
   services.avahi = {
     enable = true;

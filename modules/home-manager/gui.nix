@@ -11,15 +11,11 @@
   home.packages = lib.optionals config.device.is_nixos (
     with pkgs;
     [
-      kitty
       ghostty
-
       mpv-unwrapped
       imv
       zathura
-
       keepassxc
-      ungoogled-chromium
     ]
   );
 

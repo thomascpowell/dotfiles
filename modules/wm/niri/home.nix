@@ -36,11 +36,4 @@
 
   services.polkit-gnome.enable = true;
   programs.swaylock.enable = true;
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "ll";
-    };
-  };
 }
