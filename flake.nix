@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,52 +21,17 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nixos-hardware,
-      ...
-    }:
-    {
-      nixosConfigurations = {
-        box = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/box/default.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.t = import ./hosts/box/home.nix;
-            }
-          ];
-        };
+    inputs@{ flake-parts, ... }:
 
-        thinkpad = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/thinkpad/default.nix
-            nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.t = import ./hosts/thinkpad/home.nix;
-            }
-          ];
-        };
-      };
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        ./modules
+        ./hosts
+      ];
 
-      homeConfigurations = {
-        m2 = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-          modules = [ ./hosts/m2/home.nix ];
-        };
-
-        thinkpad = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          modules = [ ./hosts/thinkpad/home.nix ];
-        };
-      };
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
     };
 }

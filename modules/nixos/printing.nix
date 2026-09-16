@@ -1,16 +1,16 @@
-{ ... }:
-
-# Printing
-
 {
-  services.printing = {
-    enable = true;
-    browsed.enable = true;
-  };
+  flake.nixosModules.printing =
+    { ... }:
+    {
+      services.printing = {
+        enable = true;
+        browsed.enable = true;
+      };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+      services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+      };
+    };
 }

@@ -1,14 +1,12 @@
-{ lib, ... }:
-
-# Docker
-
 {
-  virtualisation.docker.enable = true;
+  flake.nixosModules.docker =
+    { ... }:
+    {
+      virtualisation.docker.enable = true;
 
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-
-  users.users.t.extraGroups = lib.mkAfter [ "docker" ];
+      virtualisation.docker.rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
 }

@@ -1,0 +1,30 @@
+{
+  flake.homeModules.languages =
+    { pkgs, ... }:
+    {
+      home.packages = with pkgs; [
+        go
+        cargo
+        rustc
+        php
+        nodejs_24
+        typst
+        rust-analyzer
+        rustfmt
+        pyright
+        typescript-language-server
+        svelte-language-server
+        vscode-langservers-extracted
+        emmet-ls
+        gopls
+        lua-language-server
+        clang-tools
+        phpactor
+        bash-language-server
+        tinymist
+        websocat
+        nixd
+        nixfmt
+      ];
+    };
+}
