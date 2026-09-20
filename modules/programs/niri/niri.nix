@@ -21,6 +21,12 @@ in
           brightnessctl
           playerctl
           (writeShellScriptBin "cb" "wl-copy")
+          (writeShellScriptBin "niri_manage_output" ''
+            selection=$(niri msg -j outputs | jq -r '.[] | [.name, (if .logical == null then "off" else "on" end)] | @tsv' | rofi -dmenu -p)
+            [ -n "$selection" ] || exit 0
+            output=$(printf '%s\n' "$selection" | cut -f1); state=$(printf '%s\n' "$selection" | cut -f2)
+            [ "$state" = "on" ] && niri msg output "$output" off || niri msg output "$output" on
+          '')
         ]
       );
 
