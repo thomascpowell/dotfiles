@@ -36,7 +36,10 @@ in
         homeModules.rofi
       ];
 
-      xdg.configFile."niri".source = ./config;
+      xdg.configFile."niri" = {
+        source = ./config;
+        recursive = true;
+      };
       services.polkit-gnome.enable = true;
       programs.swaylock.enable = true;
     };

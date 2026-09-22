@@ -2,6 +2,9 @@
   flake.homeModules.aerospace =
     { ... }:
     {
-      home.file.".config/aerospace".source = ./config;
+      xdg.configFile."aerospace" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }

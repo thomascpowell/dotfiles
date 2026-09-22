@@ -9,6 +9,9 @@
 
     {
       home.packages = lib.optionals config.device.is_nixos [ pkgs.mpv-unwrapped ];
-      home.file.".config/mpv".source = ./config;
+      xdg.configFile."mpv" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }

@@ -8,6 +8,9 @@
     }:
     {
       home.packages = lib.optionals config.device.is_nixos [ pkgs.imv ];
-      home.file.".config/imv".source = ./config;
+      xdg.configFile."imv" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }

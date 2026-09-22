@@ -32,7 +32,7 @@
         '')
       ];
 
-      home.file.".config/rofi/theme.rasi".text = ''
+      xdg.configFile."rofi/theme.rasi".text = ''
         * {
           y-offset: 0;
           width: ${toString (config.device.dpi * 6)};
@@ -146,7 +146,7 @@
         }
       '';
 
-      home.file.".config/rofi/config.rasi".text = ''
+      xdg.configFile."rofi/config.rasi".text = ''
         configuration {
           modi: "drun,run,window";
           show-icons: false;

@@ -9,6 +9,9 @@
 
     {
       home.packages = lib.optionals config.device.is_nixos [ pkgs.yazi ];
-      home.file.".config/yazi".source = ./config;
+      xdg.configFile."yazi" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }

@@ -8,6 +8,9 @@
     }:
     {
       home.packages = lib.optionals config.device.is_nixos [ pkgs.ghostty ];
-      home.file.".config/ghostty".source = ./config;
+      xdg.configFile."ghostty" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }

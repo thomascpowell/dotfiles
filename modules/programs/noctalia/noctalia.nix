@@ -9,6 +9,9 @@
 
     {
       home.packages = lib.optionals config.device.is_nixos [ pkgs.noctalia-shell ];
-      xdg.configFile."noctalia".source = ./config;
+      xdg.configFile."noctalia" = {
+        source = ./config;
+        recursive = true;
+      };
     };
 }
