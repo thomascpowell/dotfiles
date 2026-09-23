@@ -6,15 +6,20 @@ in
 
 {
   flake.homeModules.desktop =
-    { ... }:
+    { pkgs, ... }:
     {
+
+      home.packages = with pkgs; [
+        keepassxc
+        nautilus
+      ];
+
       imports = [
         homeModules.fonts
         homeModules.theme
         homeModules.xdg
         homeModules.ghostty
         homeModules.imv
-        homeModules.keepassxc
         homeModules.librewolf
         homeModules.mpv
         homeModules.zathura
