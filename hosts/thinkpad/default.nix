@@ -14,6 +14,7 @@ in
       homeModules.cli
       homeModules.desktop
       homeModules.niri
+      homeModules.sshfs
     ];
 
     home.username = "t";
