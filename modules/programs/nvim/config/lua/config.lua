@@ -84,5 +84,7 @@ local function writing_mode()
   vim.keymap.set("n", "k", "gk", { buffer = true })
   vim.keymap.set("n", "0", "g0", { buffer = true })
   vim.keymap.set("n", "$", "g$", { buffer = true })
+  vim.keymap.set("n", "A", "g$a", { buffer = true })
+  vim.keymap.set("n", "I", "g0i", { buffer = true })
 end
 vim.api.nvim_create_user_command("Writing", writing_mode, {})

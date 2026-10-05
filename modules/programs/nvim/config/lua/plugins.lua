@@ -6,7 +6,6 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
   { src = "https://github.com/nvim-telescope/telescope.nvim", },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/folke/which-key.nvim" },
   { src = "https://github.com/saghen/blink.cmp" },
@@ -18,13 +17,6 @@ vim.pack.add({
 -- lsp
 vim.lsp.enable({ "svelte", "ts_ls", "html", "emmetls", "cssls", "phpactor", "gopls", "lua_ls", "pyright", "clangd",
   "rust_analyzer", "bashls", "tinymist", "nixd" })
-
-require("typst-preview").setup({
-  dependencies_bin = {
-    tinymist = "tinymist",
-    websocat = "websocat",
-  },
-})
 
 -- colorscheme
 local lackluster = require("lackluster")
