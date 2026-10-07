@@ -14,6 +14,7 @@
           nix-output-monitor
           nh
           (writeShellScriptBin "hms" "nh home switch ${lib.escapeShellArg config.device.dotfiles_path} --configuration ${lib.escapeShellArg config.device.hostname}")
+          (writeShellScriptBin "rhm" "systemctl restart home-manager-${lib.escapeShellArg config.home.username}.service")
           (writeShellScriptBin "ns" "nix shell nixpkgs#$1")
         ]
         ++ lib.optionals config.device.is_nixos [
