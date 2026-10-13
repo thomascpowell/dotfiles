@@ -15,6 +15,7 @@ in
         tree
         zoxide
         ripgrep
+        ripgrep-all
         bash
         zip
         unzip
