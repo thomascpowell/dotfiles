@@ -2,85 +2,77 @@
   flake.homeModules.slop =
     { lib, pkgs, ... }:
     let
-      agentAttention = pkgs.writeShellApplication {
-        name = "agent_attention";
-
-        runtimeInputs = [
-          pkgs.tmux
+      notify = app: msg: {
+        type = "command";
+        command = lib.escapeShellArgs [
+          "notify-send"
+          "--app-name"
+          app
+          "--expire-time"
+          "1000"
+          msg
         ];
-
-        text = ''
-          action="''${1:-}"
-
-          if [ -z "''${TMUX_PANE:-}" ]; then
-            exit 0
-          fi
-
-          case "$action" in
-            set)
-              tmux set-option -w -t "$TMUX_PANE" @agent_attention 1 2>/dev/null || true
-              ;;
-            clear)
-              tmux set-option -w -u -t "$TMUX_PANE" @agent_attention 2>/dev/null || true
-              ;;
-            *)
-              exit 1
-              ;;
-          esac
-        '';
+        timeout = 2;
       };
 
-      hook = action: [
-        {
-          hooks = [
-            {
-              type = "command";
-              command = "${lib.getExe agentAttention} ${action}";
-              timeout = 2;
-            }
-          ];
-        }
-      ];
+      mkHook =
+        wrap: app: msg:
+        wrap (notify app msg);
 
-      codexWithAttention = pkgs.writeShellApplication {
-        name = "codex";
-
-        runtimeInputs = [
-          agentAttention
-          pkgs.codex
-        ];
-
-        text = ''
-          cleanup() {
-            agent_attention clear
-          }
-          trap cleanup EXIT
-          ${lib.getExe pkgs.codex} "$@"
-        '';
-      };
+      codexHook = mkHook (action: [ { notify = [ action ]; } ]) "Codex";
+      claudeHook = mkHook (action: [ { hooks = [ action ]; } ]) "Claude";
 
     in
     {
-      home.packages = [
-        agentAttention
-      ];
+      programs.claude-code = {
+        enable = true;
+        package = pkgs.claude-code;
+        settings = {
+          hooks = {
+            Notification = claudeHook "Notification";
+            Stop = claudeHook "Stopped";
+          };
+          env = {
+            CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
+            DISABLE_AUTOUPDATER = "1";
+            DISABLE_ERROR_REPORTING = "1";
+            DISABLE_INSTALLATION_CHECKS = "1";
+            DISABLE_TELEMETRY = "1";
+          };
+          permissions = {
+            allow = [
+              "Bash(git diff*)"
+              "Bash(git status)"
+              "Bash(git status*)"
+              "Bash(nix flake check*)"
+            ];
+            deny = [
+              "Bash(rm -rf *)"
+              "Bash(sudo *)"
+              "Bash(git push*)"
+              "Bash(git commit*)"
+              "Bash(git add*)"
+              "Bash(curl *)"
+              "Bash(wget *)"
+              "Bash(ssh *)"
+              "Bash(scp *)"
+              "Read(**/.env*)"
+              "Read(**/.ssh/**)"
+              "Read(**/.aws/**)"
+              "Read(**/.gnupg/**)"
+              "Read(**/*.pem)"
+            ];
+            disableBypassPermissionsMode = "disable";
+          };
+        };
+      };
 
       programs.codex = {
         enable = true;
-        package = codexWithAttention;
-
         hooks = {
-          SessionStart = hook "clear";
-
-          UserPromptSubmit = hook "clear";
-
-          PermissionRequest = hook "set";
-          PreToolUse = hook "set";
-          PostToolUse = hook "clear";
-
-          Stop = hook "set";
-          Interrupt = hook "clear";
-          SessionEnd = hook "clear";
+          PermissionRequest = codexHook "PermissionRequest";
+          Stop = codexHook "Stopped";
+          Interrupt = codexHook "Interrupted";
         };
       };
     };
