@@ -28,6 +28,7 @@
 
       home.file.".gitignore_global".text = ''
         .codex
+        .claude
         .agents
         .DS_Store
         .env

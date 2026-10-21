@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//home/t/dotfiles/**)",
-      "Bash(find / -path /proc -prune -o -iname \"*claude-code*\" -print)"
-    ]
-  }
-}
