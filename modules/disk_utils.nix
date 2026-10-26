@@ -1,6 +1,9 @@
 {
   flake.homeModules.disk_utils = { pkgs, ... }: {
-    services.udiskie.enable = true;
+    services.udiskie = {
+      enable = true;
+      tray = "never";
+    };
     home.packages = with pkgs; [
       sshfs
       fuse3
