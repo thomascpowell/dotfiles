@@ -1,6 +1,6 @@
 {
   flake.homeModules.slop =
-    { lib, pkgs, ... }:
+    { lib, pkgs, config, ... }:
     let
       notify = app: msg: {
         type = "command";
@@ -27,6 +27,7 @@
       programs.claude-code = {
         enable = true;
         package = pkgs.claude-code;
+        configDir = "${config.xdg.configHome}/claude";
         settings = {
           hooks = {
             Notification = claudeHook "Notification";

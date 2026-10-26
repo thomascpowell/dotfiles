@@ -14,7 +14,7 @@ in
       homeModules.cli
       homeModules.desktop
       homeModules.niri
-      homeModules.sshfs
+      homeModules.disk_utils
     ];
 
     home.username = "t";
@@ -35,21 +35,17 @@ in
         nixosModules.niri
         nixosModules.fprint
         nixosModules.nix
+        nixosModules.disk_utils
       ];
 
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
-
       networking.hostName = "thinkpad";
       networking.firewall.enable = true;
       networking.networkmanager.enable = true;
-
       services.displayManager.ly.enable = true;
-
       programs.zsh.enable = true;
-
       security.rtkit.enable = true;
-
       services.mullvad-vpn.enable = true;
       services.tailscale.enable = true;
 

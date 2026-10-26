@@ -26,6 +26,7 @@ in
         tree-sitter
         gnumake
         jq
+        delta
       ];
 
       imports = [
@@ -39,7 +40,7 @@ in
       ];
 
       home.file.".local/bin" = {
-        source = ../../misc/scripts;
+        source = ../misc/scripts;
         recursive = true;
       };
     };

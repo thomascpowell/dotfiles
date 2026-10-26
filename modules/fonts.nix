@@ -15,7 +15,7 @@
         ]
       );
 
-      home.file.".local/share/fonts/AppleColorEmoji.ttf".source = ../../misc/emoji/emoji.ttf;
+      home.file.".local/share/fonts/AppleColorEmoji.ttf".source = ../misc/emoji/emoji.ttf;
 
       fonts.fontconfig = {
         enable = true;
