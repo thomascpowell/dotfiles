@@ -23,6 +23,7 @@ in
         homeModules.librewolf
         homeModules.mpv
         homeModules.zathura
+        homeModules.vesktop
       ];
     };
 }
