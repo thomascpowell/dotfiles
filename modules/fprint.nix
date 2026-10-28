@@ -3,7 +3,6 @@
     { ... }:
     {
       services.fprintd.enable = true;
-      security.pam.services.ly.fprintAuth = false;
       security.pam.services.swaylock.fprintAuth = true;
 
       security.pam.services.sudo = {

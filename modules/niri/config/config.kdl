@@ -37,11 +37,6 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-layer-rule {
-  match namespace="^noctalia-wallpaper*"
-  place-within-backdrop true
-}
-
 overview {
   workspace-shadow {
     off
@@ -90,8 +85,6 @@ layout {
   }
 }
 
-spawn-at-startup "noctalia-shell"
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -114,6 +107,11 @@ window-rule {
     shadow {
         on
     }
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 binds {

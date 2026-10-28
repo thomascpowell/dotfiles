@@ -7,14 +7,15 @@ in
 {
   hostModules.thinkpad.home = {
     imports = [
+      # desktop
+      homeModules.desktop
+      # general
       homeModules.device
       homeModules.helpers
-      homeModules.languages
+      # dev
       homeModules.slop
       homeModules.cli
-      homeModules.desktop
-      homeModules.niri
-      homeModules.disk_utils
+      homeModules.languages
     ];
 
     home.username = "t";
@@ -31,11 +32,9 @@ in
     {
       imports = [
         ./hardware-configuration.nix
-        nixosModules.printing
-        nixosModules.niri
+        nixosModules.desktop
         nixosModules.fprint
         nixosModules.nix
-        nixosModules.disk_utils
       ];
 
       boot.loader.systemd-boot.enable = true;

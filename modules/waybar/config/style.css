@@ -1,0 +1,70 @@
+@define-color theme_bg_color #0A0A0A;
+@define-color theme_fg_color #DDDDDD;
+@define-color theme_base_color #191919;
+@define-color theme_text_color #DDDDDD;
+@define-color theme_selected_bg_color #2A2A2A;
+@define-color theme_selected_fg_color #DDDDDD;
+@define-color insensitive_bg_color #151515;
+@define-color insensitive_fg_color #a8a8a8;
+@define-color insensitive_base_color #151515;
+
+@define-color red #d70000;
+@define-color green #789978;
+@define-color yellow #ffaa88;
+@define-color blue #7788aa;
+@define-color dim #444444;
+
+* {
+  font-family: monospace;
+  font-size: 16px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: alpha(@theme_bg_color, 0.8);
+  color: @insensitive_fg_color;
+}
+
+tooltip {
+  background: @theme_base_color;
+  color: @theme_text_color;
+}
+
+#workspaces button {
+  padding: 0 7px;
+  color: @insensitive_fg_color;
+  background: transparent;
+  box-shadow: none;
+}
+
+#workspaces button label {
+  color: inherit;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight {
+  color: @insensitive_fg_color;
+}
+
+#clock {
+  color: @insensitive_fg_color;
+  padding-right: 10px;
+}
+
+#network.disconnected,
+#bluetooth.off {
+  color: @dim;
+}
+
+#battery.critical {
+  color: @red;
+}

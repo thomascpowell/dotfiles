@@ -34,6 +34,16 @@
           ];
           emoji = [ "Apple Color Emoji" ];
         };
+
+        configFile.system-ui = {
+          enable = true;
+          priority = 52;
+          settings.alias = {
+            "@binding" = "same";
+            family = "system-ui";
+            prefer.family = config.fonts.fontconfig.defaultFonts.sansSerif;
+          };
+        };
       };
     };
 }

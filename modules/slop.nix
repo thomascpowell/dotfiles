@@ -1,6 +1,11 @@
 {
   flake.homeModules.slop =
-    { lib, pkgs, config, ... }:
+    {
+      lib,
+      pkgs,
+      config,
+      ...
+    }:
     let
       notify = app: msg: {
         type = "command";

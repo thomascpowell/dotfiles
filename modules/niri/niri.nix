@@ -32,7 +32,7 @@ in
 
       imports = [
         homeModules.grim
-        homeModules.noctalia
+        homeModules.waybar
         homeModules.rofi
       ];
 
@@ -42,6 +42,19 @@ in
       };
       services.polkit-gnome.enable = true;
       programs.swaylock.enable = true;
+
+      systemd.user.services.swaybg = {
+        Unit = {
+          Description = "Wallpaper";
+          PartOf = [ "graphical-session.target" ];
+          After = [ "graphical-session.target" ];
+        };
+        Service = {
+          ExecStart = "${lib.getExe pkgs.swaybg} -m fill -i ${../../misc/wall/mountain.jpg}";
+          Restart = "on-failure";
+        };
+        Install.WantedBy = [ "graphical-session.target" ];
+      };
     };
 
   flake.nixosModules.niri =
