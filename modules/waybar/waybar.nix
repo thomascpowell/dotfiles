@@ -33,7 +33,7 @@ in
         ];
 
         "niri/workspaces" = {
-          format = "{index}";
+          format = "WORKSPACE {index}";
           current-only = true;
         };
 
