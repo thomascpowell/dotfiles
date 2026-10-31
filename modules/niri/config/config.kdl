@@ -49,7 +49,8 @@ output "eDP-1" {
 
 layout {
   background-color "transparent"
-  gaps 10
+  // gaps 10
+  gaps 7
   center-focused-column "never"
   preset-column-widths {
       proportion 0.33333
@@ -76,6 +77,7 @@ layout {
 
   // You can enable drop shadows for windows.
   shadow {
+      off
       // on
       // draw-behind-window true
       // softness 30
@@ -97,7 +99,8 @@ animations {
 }
 
 window-rule {
-    geometry-corner-radius 10
+    // geometry-corner-radius 10
+    geometry-corner-radius 7
     clip-to-geometry true
 
     background-effect {

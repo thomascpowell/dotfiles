@@ -1,6 +1,5 @@
-vars="$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-[[ -f $vars ]] && . "$vars"
-fpath+=("$HOME/.nix-profile/share/zsh/site-functions")
+profile="/etc/profiles/per-user/$USERNAME"
+. "$profile/etc/profile.d/hm-session-vars.sh"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

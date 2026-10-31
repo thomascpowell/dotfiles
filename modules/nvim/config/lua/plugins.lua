@@ -3,6 +3,7 @@ vim.pack.add({
   { src = "https://github.com/m4xshen/autoclose.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/nvim-mini/mini.icons" },
+  { src = "https://github.com/nvim-mini/mini.hipatterns" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
   { src = "https://github.com/nvim-telescope/telescope.nvim", },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -40,6 +41,12 @@ require("autoclose").setup()
 
 -- icons
 require("mini.icons").setup()
+
+-- hex colors
+local hipatterns = require("mini.hipatterns")
+hipatterns.setup({
+  highlighters = { hex_color = hipatterns.gen_highlighter.hex_color() },
+})
 
 -- oil
 require("oil").setup({

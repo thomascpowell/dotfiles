@@ -23,7 +23,9 @@
 }
 
 window#waybar {
-  background: alpha(@theme_bg_color, 0.8);
+  background: alpha(@theme_bg_color, 0.7);
+  /* background: @theme_bg_color; */
+  /* background: transparent; */
   color: @insensitive_fg_color;
 }
 
@@ -33,7 +35,7 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 0 7px;
+  padding-left: 8px;
   color: @insensitive_fg_color;
   background: transparent;
   box-shadow: none;
@@ -57,7 +59,7 @@ tooltip {
 
 #clock {
   color: @insensitive_fg_color;
-  padding-right: 10px;
+  padding-right: 8px;
 }
 
 #network.disconnected,
