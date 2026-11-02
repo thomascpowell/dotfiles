@@ -23,9 +23,9 @@
 }
 
 window#waybar {
-  background: alpha(@theme_bg_color, 0.7);
+  /* background: alpha(@theme_bg_color, 0.7); */
+  background: transparent;
   /* background: @theme_bg_color; */
-  /* background: transparent; */
   color: @insensitive_fg_color;
 }
 
@@ -34,8 +34,12 @@ tooltip {
   color: @theme_text_color;
 }
 
+#workspaces {
+  padding-left: 2px;
+}
+
 #workspaces button {
-  padding-left: 8px;
+  padding: 0 6px;
   color: @insensitive_fg_color;
   background: transparent;
   box-shadow: none;

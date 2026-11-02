@@ -16,7 +16,7 @@ in
 
       settings.mainBar = {
         layer = "top";
-        position = "top";
+        position = "bottom";
         height = 26;
         spacing = 14;
         modules-left = [
@@ -25,21 +25,22 @@ in
         modules-center = [ ];
         modules-right = [
           "battery"
-          "network"
-          "bluetooth"
           "pulseaudio"
           "backlight"
+          "bluetooth"
+          "network"
           "clock"
         ];
 
         "niri/workspaces" = {
-          format = "WORKSPACE {index}";
+          format = "WS {index}";
           current-only = true;
         };
 
         battery = {
-          format = "BAT {capacity}";
-          format-charging = "BAT {capacity}+";
+          format = "{capacity}";
+          format-charging = "{capacity}+";
+          format-plugged = "{capacity}+";
           states = {
             warning = 20;
             critical = 10;
@@ -47,20 +48,20 @@ in
         };
 
         network = {
-          format-wifi = "WIFI CON";
+          format-wifi = "WIFI";
           format-ethernet = "ETH";
-          format-linked = "WIFI ON";
-          format-disconnected = "WIFI ON";
-          format-disabled = "WIFI OFF";
+          format-linked = "";
+          format-disconnected = "";
+          format-disabled = "";
           tooltip-format = "{essid} {ifname} {ipaddr}";
           on-click = term (lib.getExe pkgs.wifitui);
         };
 
         bluetooth = {
-          format = "BTH ON";
-          format-off = "BTH OFF";
-          format-disabled = "BTH OFF";
-          format-connected = "BTH CON";
+          format = "";
+          format-off = "";
+          format-disabled = "";
+          format-connected = "BTH";
           tooltip-format-connected = "{device_alias}";
           on-click = term (lib.getExe pkgs.bluetui);
         };
@@ -78,9 +79,10 @@ in
           scroll-step = 5;
         };
 
-        clock = {
-          format = "{:%m/%d %I:%M %p}";
-          tooltip-format = "<tt>{calendar}</tt>";
+        "clock" = {
+          format = "{:%I:%M}";
+          tooltip = true;
+          tooltip-format = "{:%m/%d}";
         };
       };
 
