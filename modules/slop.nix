@@ -1,43 +1,17 @@
 {
   flake.homeModules.slop =
     {
-      lib,
       pkgs,
       config,
       ...
     }:
-    let
-      notify = app: msg: {
-        type = "command";
-        command = lib.escapeShellArgs [
-          "notify-send"
-          "--app-name"
-          app
-          "--expire-time"
-          "1000"
-          msg
-        ];
-        timeout = 2;
-      };
 
-      mkHook =
-        wrap: app: msg:
-        wrap (notify app msg);
-
-      codexHook = mkHook (action: [ { notify = [ action ]; } ]) "Codex";
-      claudeHook = mkHook (action: [ { hooks = [ action ]; } ]) "Claude";
-
-    in
     {
       programs.claude-code = {
         enable = true;
         package = pkgs.claude-code;
         configDir = "${config.xdg.configHome}/claude";
         settings = {
-          hooks = {
-            Notification = claudeHook "Notification";
-            Stop = claudeHook "Stopped";
-          };
           env = {
             CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
             DISABLE_AUTOUPDATER = "1";
@@ -70,15 +44,6 @@
             ];
             disableBypassPermissionsMode = "disable";
           };
-        };
-      };
-
-      programs.codex = {
-        enable = true;
-        hooks = {
-          PermissionRequest = codexHook "PermissionRequest";
-          Stop = codexHook "Stopped";
-          Interrupt = codexHook "Interrupted";
         };
       };
     };
