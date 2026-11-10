@@ -37,6 +37,7 @@ in
         nixosModules.nix
       ];
 
+      boot.kernelPackages = pkgs.linuxPackages_latest;
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
       networking.hostName = "thinkpad";
@@ -56,6 +57,11 @@ in
         alsa.enable = true;
         pulse.enable = true;
       };
+
+      # mute light nonsense
+      services.udev.extraRules = ''
+        ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", ATTRS{id}=="sofsoundwire", RUN+="${pkgs.bash}/bin/sh -c 'echo rt1318-1 DAC Switch > /sys/class/sound/ctl-led/speaker/card%n/attach'"
+      '';
 
       services.tlp.enable = true;
       services.tlp.settings = {
