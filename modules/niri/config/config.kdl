@@ -153,6 +153,7 @@ binds {
     Mod+Shift+L     { move-column-right; }
 
     Mod+M { focus-monitor-next; }
+    Mod+Shift+M { move-window-to-monitor-next; }
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }

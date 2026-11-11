@@ -7,20 +7,12 @@ in
 {
   hostModules.thinkpad.home = {
     imports = [
+      homeModules.base
       # desktop
       homeModules.desktop
-      # general
-      homeModules.device
-      homeModules.helpers
       # dev
       homeModules.slop
-      homeModules.cli
-      homeModules.languages
     ];
-
-    home.username = "t";
-    home.homeDirectory = "/home/t";
-    home.stateVersion = "26.05";
 
     device.hostname = "thinkpad";
     device.is_nixos = true;
@@ -32,24 +24,16 @@ in
     {
       imports = [
         ./hardware-configuration.nix
+        nixosModules.base
         nixosModules.desktop
         nixosModules.fprint
-        nixosModules.nix
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
-      boot.loader.systemd-boot.enable = true;
-      boot.loader.efi.canTouchEfiVariables = true;
       networking.hostName = "thinkpad";
-      networking.firewall.enable = true;
-      networking.networkmanager.enable = true;
       services.displayManager.ly.enable = true;
-      programs.zsh.enable = true;
       security.rtkit.enable = true;
       services.mullvad-vpn.enable = true;
-      services.tailscale.enable = true;
-
-      time.timeZone = "America/New_York";
 
       services.pipewire = {
         enable = true;
@@ -76,25 +60,10 @@ in
         powerOnBoot = true;
       };
 
-      users.users.t = {
-        isNormalUser = true;
-        description = "t";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "video"
-        ];
-        shell = pkgs.zsh;
-      };
+      users.users.t.extraGroups = [ "video" ];
 
       environment.systemPackages = with pkgs; [
-        git
-        vim
-        curl
-        bash
         gcc
       ];
-
-      system.stateVersion = "26.05";
     };
 }

@@ -9,16 +9,9 @@ in
     { config, ... }:
     {
       imports = [
-        homeModules.device
-        homeModules.helpers
-        homeModules.languages
-        homeModules.cli
+        homeModules.base
         homeModules.aerospace
       ];
-
-      home.username = "t";
-      home.homeDirectory = "/Users/t";
-      home.stateVersion = "26.05";
 
       device.hostname = "m2";
 

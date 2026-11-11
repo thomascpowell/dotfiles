@@ -30,6 +30,22 @@ let
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
   };
+
+  mkNixos =
+    name: extraModules:
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        unfreeNixosModule
+        hosts.${name}.system
+        home-manager.nixosModules.home-manager
+        homeManagerNixosModule
+        {
+          home-manager.users.t = hosts.${name}.home;
+        }
+      ]
+      ++ extraModules;
+    };
 in
 
 {
@@ -45,32 +61,11 @@ in
   };
 
   config = {
-    flake.nixosConfigurations.box = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        unfreeNixosModule
-        hosts.box.system
-        home-manager.nixosModules.home-manager
-        homeManagerNixosModule
-        {
-          home-manager.users.t = hosts.box.home;
-        }
-      ];
-    };
+    flake.nixosConfigurations.box = mkNixos "box" [ ];
 
-    flake.nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        unfreeNixosModule
-        hosts.thinkpad.system
-        nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
-        home-manager.nixosModules.home-manager
-        homeManagerNixosModule
-        {
-          home-manager.users.t = hosts.thinkpad.home;
-        }
-      ];
-    };
+    flake.nixosConfigurations.thinkpad = mkNixos "thinkpad" [
+      nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
+    ];
 
     flake.homeConfigurations.m2 = home-manager.lib.homeManagerConfiguration {
       pkgs = mkPkgs "aarch64-darwin";
